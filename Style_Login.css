@@ -68,3 +68,35 @@ input[type="password"] {
 .register-link a:hover {
   text-decoration: underline;
 }
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: #00296b;
+  font-size: 0.9em;
+}
+
+.remember input {
+  margin-right: 8px;
+}
