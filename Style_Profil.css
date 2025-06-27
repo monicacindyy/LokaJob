@@ -38,3 +38,14 @@ h2 {
   font-size: 1em;
   color: #333;
 }
+
+.warning-box {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 12px;
+  color: #856404;
+  text-align: center;
+}

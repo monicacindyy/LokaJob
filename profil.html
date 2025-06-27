@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <div class="warning-box">
+    <h3>⚠️ Akses Ditolak</h3>
+    <p>Silakan <a href="login.html">login</a> atau <a href="registration.html">daftar</a> untuk mengakses halaman profil.</p>
+  </div>
+
   <div class="container">
     <h2><i class="fas fa-user-circle"></i> User Profile</h2>
 
@@ -21,6 +26,19 @@
       <p><strong>Age:</strong> 22</p>
       <p><strong>Status:</strong> Nganggur</p>
     </div>
+
+    <script>
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (!user) {
+        document.getElementById("warningBox").style.display = "block";
+      }
+      else {
+        document.getElementById("profileBox").style.display = "block";
+        document.getElementById("userName").textContent = user.nama;
+        document.getElementById("userUniv").textContent = user.universitas;
+      }
+    </script>
   </div>
 </body>
 </html>
