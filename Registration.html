@@ -40,14 +40,31 @@
     function togglePassword() {
       const pass = document.getElementById("regPassword");
       const toggleBtn = document.querySelector(".toggle-password");
+      
       if (pass.type === "password") {
         pass.type = "text";
-        toggleBtn.textContent = "🙈";
+        toggleBtn.textContent = "👁";
       } else {
         pass.type = "password";
-        toggleBtn.textContent = "👁️";
+        toggleBtn.textContent = "👁️‍🗨️";
       }
     }
+
+    document.getElementById("registrationForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("regName").value;
+      const email = document.getElementById("regEmail").value;
+      const password = document.getElementById("regPassword").value;
+
+      const akun = { email, password };
+
+      // Simpan ke localStorage
+      localStorage.setItem("akun", JSON.stringify(akun));
+
+      alert("Pendaftaran berhasil! Silakan login.");
+      window.location.href = "login.html";
+    });
   </script>
 </body>
 </html>
