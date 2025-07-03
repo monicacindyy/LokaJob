@@ -1,254 +1,159 @@
-/* REGISTER CSS */
-.container_Register {
-  max-width: 400px;
-  margin: 100px auto;
-  background-color: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-h2 {
-  text-align: center;
-  color: #00296b;
-  margin-bottom: 25px;
-}
-
-label {
-  display: block;
-  margin-top: 15px;
-  color: #00296b;
-  font-weight: 600;
-}
-
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-small {
-  color: #666;
-  font-size: 0.8em;
-}
-
-.btn {
-  width: 100%;
-  padding: 12px;
-  margin-top: 20px;
-  border: none;
-  background-color: #00296b;
-  color: white;
-  font-weight: bold;
-  font-size: 1em;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #0051a2;
-}
-
-.login-link {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.login-link a {
-  color: #d62828;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.login-link a:hover {
-  text-decoration: underline;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f3f5fc;
-    }
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f2f5fd;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+/* Sidebar */
+.sidebar {
+  width: 180px;
+  background-color: #e0e0e0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 10px;
+  border-right: 1px solid #aaa;
+}
 
-    header {
-      background-color: #1a3d7c;
-      color: white;
-      padding: 20px;
-      position: relative;
-    }
+.menu-icon {
+  font-size: 28px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
-    header h1 {
-      margin: 0 0 10px 50px;
-      font-size: 24px;
-    }
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
 
-    header h1 span {
-      color: #ffd700;
-    }
+.sidebar ul li {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
 
-    .menu-icon {
-      position: absolute;
-      top: 25px;
-      left: 20px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 20px;
-      height: 18px;
-    }
+.sidebar ul li a {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 
-    .menu-icon div {
-      height: 4px;
-      background-color: rgb(216, 10, 10);
-      border-radius: 2px;
-    }
+.sidebar ul li a img {
+  width: 22px;
+  margin-right: 10px;
+}
 
-    .menu-bar {
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: none; /* disembunyikan dulu */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    z-index: 10;
-    }
+/* Header Area */
+.header {
+  background-color: #163c7d;
+  padding: 20px 40px 10px 40px;
+}
 
-  .menu-bar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    }
+.header .logo {
+  color: white;
+  font-weight: bold;
+}
 
-  .menu-bar li {
-    margin: 10px 0;
-    }
+.header .tagline {
+  color: #ffcc00;
+  font-weight: bold;
+}
 
-  .menu-bar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    }
+.search-wrapper {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
 
-    .notification-icon {
-      position: absolute;
-      top: 25px;
-      right: 20px;
-      width: 24px;
-      height: 24px;
-      cursor: pointer;
-    }
+.search-wrapper input {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  width: 60%;
+  font-size: 16px;
+}
 
-    .notification-icon svg {
-      width: 100%;
-      height: 100%;
-      fill: white;
-    }
+.search-wrapper button {
+  padding: 10px 20px;
+  background-color: #0c356a;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
 
-    .search-bar {
-      display: flex;
-    }
+.top-content {
+  position: relative;
+  text-align: center;
+}
 
-    .search-bar input {
-      flex: 1;
-      padding: 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px 0 0 5px;
-    }
+.notif-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 15px;
+}
 
-    .search-bar button {
-      padding: 10px 20px;
-      background-color: #003366;
-      color: white;
-      border: none;
-      border-radius: 0 5px 5px 0;
-      cursor: pointer;
-    }
+.notif-icon img {
+  width: 2
+}
 
-    .categories {
-      display: flex;
-      justify-content: space-between;
-      margin: 20px 0;
-    }
+/* Main Content */
+.content {
+  margin-left: 180px;
+  margin-top: 60px;
+  padding: 20px;
+}
 
-    .categories .category {
-      background-color: #083d64;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 15px;
-      text-align: center;
-      flex: 1;
-      margin: 0 5px;
-      font-size: 14px;
-    }
+/* Filter Buttons */
+.filter-section {
+  padding: 20px;
+  text-align: center;
+}
 
-    .filters {
-      display: flex;
-      justify-content: flex-start;
-      margin-bottom: 20px;
-    }
+.category-buttons button {
+  padding: 10px 20px;
+  margin: 10px 10px;
+  border: none;
+  background-color: #003a66;
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .filters .filter-btn {
-      background-color: #e0e0e0;
-      border: none;
-      border-radius: 20px;
-      padding: 10px 15px;
-      margin-right: 10px;
-      cursor: pointer;
-    }
+.filters button {
+  padding: 8px 15px;
+  margin: 10px 5px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
 
-    .job-listings {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
+/* Job Content Placeholder */
+.job-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
 
-    .job-card {
-      background-color: #ddd;
-      border-radius: 20px;
-      padding: 30px;
-      height: 200px;
-      position: relative;
-    }
-
-    .bookmark {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      width: 20px;
-      height: 30px;
-      border: 2px solid gray;
-      border-radius: 0 0 5px 5px;
-    }
-
-    @media (max-width: 768px) {
-      .categories {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .job-listings {
-        grid-template-columns: 1fr;
-      }
-
-      header h1 {
-        font-size: 20px;
-        margin-left: 50px;
-      }
-    }
+.job-card {
+  width: 45%;
+  height: 200px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+}

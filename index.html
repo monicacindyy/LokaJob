@@ -2,81 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LokaJob - Find your job</title>
-  <link rel="stylesheet" href="CSS/Styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocaJob</title>
+  <link rel="stylesheet" href="CSS/Styles.css" />
 </head>
 <body>
 
-  <header>
-    <!-- Ikon Menu -->
-    <div class="menu-icon" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <ul id="menuBar">
+      <li><a href="index.html"><img src="icons/home.png" alt="">Home</a></li>
+      <li><a href="Company.html"><img src="icons/company.png" alt="">Company</a></li>
+      <li><a href="Jobsite.html"><img src="icons/job.png" alt="">Job</a></li>
+      <li><a href="Tips & Trick.html"><img src="icons/tips.png" alt="">Tips & Trick</a></li>
+      <li><a href="profil.html"><img src="icons/tips.png" alt="">Profil</a></li>
+      <li><a href="about us.html"><img src="icons/about.png" alt="">About Us</a></li>
+    </ul>
+  </div>
+
+  <!-- Header -->
+     <header class="header">
+    <div class="top-content">
+      <h1><span class="logo">LokaJob,</span><span class="tagline">  Find your job</span></h1>
+      <div class="notif-icon">
+        <img src="icons/bell.png" alt="Notification">
+     </div>
     </div>
-
-    <!-- Menu Bar -->
-    <nav class="menu-bar" id="menuBar">
-      <ul>
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="about us.html">Tentang Kami</a></li>
-        <li><a href="Jobsite.html">Lowongan</a></li>
-        <li><a href="Registration.html">Daftar</a></li>
-        <li><a href="profil.html">Profil</a></li>
-      </ul>
-    </nav>
-
-
-    <!-- Ikon Notifikasi (Lonceng) -->
-    <div class="notification-icon" title="Notifikasi">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2C10.34 2 9 3.34 9 5V6.09C6.39 7.17 4.5 9.91 4.5 13V17L3 18.5V19H21V18.5L19.5 17V13C19.5 9.91 17.61 7.17 15 6.09V5C15 3.34 13.66 2 12 2ZM12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22Z"/>
-      </svg>
-    </div>
-
-    <div class="container">
-      <h1>LokaJob, <span>Find your job</span></h1>
-      <div class="search-bar">
-        <input type="text" placeholder="Temukan pekerjaan yang anda inginkan">
-        <button>Search</button>
-      </div>
+    <div class="search-wrapper">
+      <input type="text" placeholder="Temukan pekerjaan yang anda inginkan">
+      <button>Search</button>
     </div>
   </header>
 
-  <div class="container">
-    <div class="categories">
-      <div class="category">All Jobs</div>
-      <div class="category">IT & Engineering</div>
-      <div class="category">Finance & Accounting</div>
-      <div class="category">Business Dev & Sales</div>
-    </div>
-
-    <div class="filters">
-      <button class="filter-btn">Filter</button>
-      <button class="filter-btn">Type of Job Vacancies</button>
-      <button class="filter-btn">Location</button>
-    </div>
-
-    <div class="job-listings">
-      <div class="job-card">
-        <div class="bookmark"></div>
+  <!-- Main Content -->
+  <main class="content">
+      <!-- Filter Buttons -->
+    <section class="filter-section">
+      <div class="category-buttons">
+        <button>All Jobs</button>
+        <button>IT & Engineering</button>
+        <button>Finance & Accounting</button>
+        <button>Business Dev & Sales</button>
       </div>
-      <div class="job-card">
-        <div class="bookmark"></div>
+      <div class="filters">
+        <button>Filter</button>
+        <button>Type of Job Vacancies</button>
+        <button>Location</button>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <!-- Placeholder Content -->
+    <section class="job-content">
+      <div class="job-card"></div>
+      <div class="job-card"></div>
+    </section>
+  </main>
+
+  <!-- Toggle Menu Script -->
   <script>
-  function toggleMenu() {
-    const menu = document.getElementById("menuBar");
-    if (menu.style.display === "block") {
-      menu.style.display = "none";
-    } else {
-      menu.style.display = "block";
+    function toggleMenu() {
+      const menu = document.getElementById("menuBar");
+      if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "block";
+      } else {
+        menu.style.display = "none";
+      }
     }
-  }
-</script>
-
+  </script>
 </body>
 </html>
