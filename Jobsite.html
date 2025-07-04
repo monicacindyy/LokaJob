@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jobsite - LokaJob</title>
+  <link rel="stylesheet" href="CSS/Style_Jobsite.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">LokaJob</div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Company.html">Company</a></li>
+      <li><a class="active" href="Jobsite.html">Job</a></li>
+      <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Header Section -->
+    <header class="header">
+      <h1>Lowongan Pekerjaan</h1>
+      <p>Cari peluang terbaik untuk kariermu</p>
+    </header>
+
+    <!-- Search & Filter -->
+    <section class="search-filter">
+      <div class="search-wrap">
+        <input type="text" placeholder="Cari pekerjaan..." />
+        <button>Cari</button>
+      </div>
+      <div class="filters">
+        <select>
+          <option>Semua Kategori</option>
+          <option>IT & Engineering</option>
+          <option>Finance & Accounting</option>
+          <option>Business Dev & Sales</option>
+        </select>
+        <select>
+          <option>Semua Lokasi</option>
+          <option>Semarang</option>
+          <option>Jakarta</option>
+          <option>Surabaya</option>
+        </select>
+        <select>
+          <option>Semua Tipe</option>
+          <option>Full-time</option>
+          <option>Part-time</option>
+          <option>Internship</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Job Listings -->
+    <section class="jobs-list fade-in">
+      <!-- contoh card 1 -->
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Frontend Developer</h3>
+          <p class="company">PT. Kreasi Digital</p>
+          <p class="location">Semarang, Jawa Tengah</p>
+        </div>
+        <div class="job-meta">
+          <span class="type">Full-time</span>
+          <button class="apply-btn">Lamar</button>
+        </div>
+      </div>
+
+      <!-- contoh card 2 -->
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Backend Engineer</h3>
+          <p class="company">CV. Solusi Teknologi</p>
+          <p class="location">Jakarta</p>
+        </div>
+        <div class="job-meta">
+          <span class="type">Part-time</span>
+          <button class="apply-btn">Lamar</button>
+        </div>
+      </div>
+
+      <!-- contoh card 3 -->
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Akuntan Junior</h3>
+          <p class="company">PT. Finansia Bersama</p>
+          <p class="location">Surabaya</p>
+        </div>
+        <div class="job-meta">
+          <span class="type">Internship</span>
+          <button class="apply-btn">Lamar</button>
+        </div>
+      </div>
+
+      <!-- tambahkan card lain sesuai data -->
+    </section>
+
+  </div>
+</body>
+</html>
