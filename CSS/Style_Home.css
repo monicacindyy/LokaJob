@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,73 +8,69 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f2f5fd;
+  display: flex;
 }
 
 /* Sidebar */
 .sidebar {
   width: 180px;
-  background-color: #e0e0e0;
+  background-color: #1c2b36;
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  padding-top: 10px;
-  border-right: 1px solid #aaa;
+  padding-top: 20px;
+  color: white;
 }
 
-.menu-icon {
-  font-size: 28px;
-  padding: 10px 20px;
-  cursor: pointer;
+.sidebar .logo {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
 }
 
 .sidebar ul li {
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #ccc;
+  padding: 12px 20px;
 }
 
 .sidebar ul li a {
   text-decoration: none;
-  color: #000;
-  display: flex;
-  align-items: center;
+  color: white;
+  display: block;
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+  color: #ffcc00;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 180px;
+  padding: 40px;
   width: 100%;
 }
 
-.sidebar ul li a img {
-  width: 22px;
-  margin-right: 10px;
-}
-
-/* Header Area */
 .header {
-  background-color: #163c7d;
-  padding: 20px 40px 10px 40px;
-}
-
-.header .logo {
+  background-color: #0047ab;
   color: white;
-  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.header .tagline {
-  color: #ffcc00;
-  font-weight: bold;
-}
-
+/* Search Bar */
 .search-wrapper {
-  margin-top: 15px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 0;
 }
 
 .search-wrapper input {
@@ -93,30 +90,7 @@ body {
   cursor: pointer;
 }
 
-.top-content {
-  position: relative;
-  text-align: center;
-}
-
-.notif-icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px 15px;
-}
-
-.notif-icon img {
-  width: 2
-}
-
-/* Main Content */
-.content {
-  margin-left: 180px;
-  margin-top: 60px;
-  padding: 20px;
-}
-
-/* Filter Buttons */
+/* Filter Section */
 .filter-section {
   padding: 20px;
   text-align: center;
@@ -133,27 +107,19 @@ body {
   cursor: pointer;
 }
 
-.filters button {
-  padding: 8px 15px;
-  margin: 10px 5px;
-  background-color: #e0e0e0;
-  border: none;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-/* Job Content Placeholder */
+/* Job Content */
 .job-content {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
 }
 
 .job-card {
-  width: 45%;
+  width: 300px;
   height: 200px;
   background-color: #d9d9d9;
   border-radius: 20px;
+  padding: 20px;
 }

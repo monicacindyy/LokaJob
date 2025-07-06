@@ -1,74 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LocaJob</title>
-  <link rel="stylesheet" href="CSS/Styles.css" />
+  <title>Beranda - LokaJob</title>
+  <link rel="stylesheet" href="CSS/Style_Home.css" />
 </head>
 <body>
-
-  <!-- Sidebar -->
   <div class="sidebar">
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    <ul id="menuBar">
-      <li><a href="index.html"><img src="icons/home.png" alt="">Home</a></li>
-      <li><a href="Company.html"><img src="icons/company.png" alt="">Company</a></li>
-      <li><a href="Jobsite.html"><img src="icons/job.png" alt="">Job</a></li>
-      <li><a href="Tips_&_Trick.html"><img src="icons/tips.png" alt="">Tips & Trick</a></li>
-      <li><a href="profil.html"><img src="icons/tips.png" alt="">Profil</a></li>
-      <li><a href="about.html"><img src="icons/about.png" alt="">About Us</a></li>
+    <div class="logo">LokaJob</div>
+    <ul>
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="Company.html">Company</a></li>
+      <li><a href="Jobsite.html">Job</a></li>
+      <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="about.html">About Us</a></li>
     </ul>
   </div>
 
-  <!-- Header -->
-     <header class="header">
-    <div class="top-content">
-      <h1><span class="logo">LokaJob,</span><span class="tagline">  Find your job</span></h1>
-      <div class="notif-icon">
-        <img src="icons/bell.png" alt="Notification">
-     </div>
+  <div class="main-content">
+    <div class="header">
+      <h1>Selamat Datang di LokaJob</h1>
+      <p>Temukan pekerjaan impianmu di sini!</p>
     </div>
+
     <div class="search-wrapper">
-      <input type="text" placeholder="Temukan pekerjaan yang anda inginkan">
-      <button>Search</button>
+      <input type="text" placeholder="Cari lowongan pekerjaan..." />
+      <button>Cari</button>
     </div>
-  </header>
 
-  <!-- Main Content -->
-  <main class="content">
-      <!-- Filter Buttons -->
-    <section class="filter-section">
+    <div class="filter-section">
       <div class="category-buttons">
-        <button>All Jobs</button>
-        <button>IT & Engineering</button>
-        <button>Finance & Accounting</button>
-        <button>Business Dev & Sales</button>
+        <button>IT</button>
+        <button>Finance</button>
+        <button>Marketing</button>
+        <button>Lainnya</button>
       </div>
-      <div class="filters">
-        <button>Filter</button>
-        <button>Type of Job Vacancies</button>
-        <button>Location</button>
-      </div>
-    </section>
+    </div>
 
-    <!-- Placeholder Content -->
-    <section class="job-content">
-      <div class="job-card"></div>
-      <div class="job-card"></div>
-    </section>
-  </main>
-
-  <!-- Toggle Menu Script -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menuBar");
-      if (menu.style.display === "none" || menu.style.display === "") {
-        menu.style.display = "block";
-      } else {
-        menu.style.display = "none";
-      }
-    }
-  </script>
+    <div class="job-content">
+      <div class="job-card">Job 1</div>
+      <div class="job-card">Job 2</div>
+    </div>
+  </div>
 </body>
 </html>
