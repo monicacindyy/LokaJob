@@ -6,9 +6,7 @@
   <link rel="stylesheet" href="CSS/Style_Tips_&_Trick.css" />
 </head>
 <body>
-
-  <!-- Sidebar -->
-  <div class="sidebar">
+<div class="sidebar">
     <div class="logo">LokaJob</div>
     <ul class="menu">
       <li><a href="index.html">Home</a></li>
@@ -20,32 +18,102 @@
     </ul>
   </div>
 
-  <!-- Main Content -->
   <div class="main-content">
     <div class="header">
       <h1>Tips & Trick</h1>
       <p>Dapatkan wawasan seputar dunia kerja dan proses melamar kerja</p>
     </div>
 
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">Semua</button>
+      <button class="filter-btn" data-category="cv">CV</button>
+      <button class="filter-btn" data-category="interview">Interview</button>
+      <button class="filter-btn" data-category="mindset">Mindset</button>
+    </div>
+
     <div class="tips-container">
-      <div class="tip-card">
+      <div class="tip-card cv fade-in">
         <h3>Cara Membuat CV Menarik</h3>
         <p>Gunakan desain sederhana, tulis pengalaman yang relevan, dan pastikan tidak ada typo.</p>
         <a href="#">Baca Selengkapnya</a>
       </div>
 
-      <div class="tip-card">
+      <div class="tip-card interview fade-in">
         <h3>Tips Lolos Interview</h3>
         <p>Persiapkan jawaban umum, cari tahu profil perusahaan, dan tampil percaya diri.</p>
         <a href="#">Baca Selengkapnya</a>
       </div>
 
-      <div class="tip-card">
+      <div class="tip-card mindset fade-in">
         <h3>Hindari Kesalahan Ini Saat Melamar</h3>
         <p>Jangan kirim CV kosong, jangan pakai email alay, dan jangan asal klik "Apply".</p>
         <a href="#">Baca Selengkapnya</a>
       </div>
     </div>
   </div>
+
+  <div class="modal" id="tipsModal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modal-title">Judul Tips</h2>
+      <p id="modal-content">Konten lengkap tips akan muncul di sini.</p>
+    </div>
+  </div>
+
+   <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.tip-card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelector('.filter-btn.active')?.classList.remove('active');
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-category');
+        cards.forEach(card => {
+          if (category === 'all' || card.classList.contains(category)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Scroll fade-in
+    const fadeEls = document.querySelectorAll('.fade-in');
+    window.addEventListener('scroll', () => {
+      fadeEls.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    });
+
+    // Modal logic
+    const tipsModal = document.getElementById('tipsModal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalContent = document.getElementById('modal-content');
+    const closeBtn = document.querySelector('.close-btn');
+
+    document.querySelectorAll('.tip-card a').forEach((btn, index) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modalTitle.textContent = document.querySelectorAll('.tip-card h3')[index].textContent;
+        modalContent.textContent = document.querySelectorAll('.tip-card p')[index].textContent;
+        tipsModal.style.display = 'flex';
+      });
+    });
+
+    closeBtn.onclick = () => {
+      tipsModal.style.display = 'none';
+    };
+
+    window.onclick = (e) => {
+      if (e.target === tipsModal) {
+        tipsModal.style.display = 'none';
+      }
+    };
+  </script>
 </body>
 </html>

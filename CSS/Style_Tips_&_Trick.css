@@ -114,6 +114,60 @@ body {
   text-decoration: underline;
 }
 
+/* Responsive dan Modal ditambahkan langsung */
+.filter-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #0047ab;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 8px;
+    text-align: left;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .main-content {
@@ -124,3 +178,5 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
