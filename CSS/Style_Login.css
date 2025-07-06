@@ -1,7 +1,10 @@
 /* Tampilan dasar */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f6fc;
+  background-image: url("../IMAGES/Fate.Grand.Order.full.3228764.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   display: flex;

@@ -1,6 +1,9 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f6fc;
+  background-image: url("../IMAGES/fate-grand-order-saber-queen-c7vgkb5ezoadygih.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
   display: flex;

@@ -159,3 +159,21 @@ body {
   border-radius: 20px;
   padding: 20px;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: absolute;
+    width: 100%;
+    height: auto;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .job-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
