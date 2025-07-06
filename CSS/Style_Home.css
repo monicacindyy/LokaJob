@@ -13,57 +13,71 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 180px;
-  background-color: #1c2b36;
+  width: 200px;
+  background: #2c3e50;
+  min-height: 100vh;
+  padding: 20px 10px;
   position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
-  padding-top: 20px;
-  color: white;
+  color: #fff;
 }
 
-.sidebar .logo {
-  font-size: 20px;
+.logo {
+  font-size: 24px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.sidebar ul {
+.menu {
   list-style: none;
-  padding: 0;
 }
 
-.sidebar ul li {
-  padding: 12px 20px;
+.menu li {
+  margin: 12px 0;
 }
 
-.sidebar ul li a {
+.menu a {
+  color: #fff;
   text-decoration: none;
-  color: white;
+  font-size: 16px;
   display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s;
 }
 
-.sidebar ul li a.active,
-.sidebar ul li a:hover {
+.menu a:hover,
+.menu a.active {
+  background: #34495e;
   color: #ffcc00;
 }
 
 /* Main Content */
 .main-content {
-  margin-left: 180px;
-  padding: 40px;
-  width: 100%;
+  margin-left: 220px;
+  padding: 20px;
+  flex: 1;
 }
 
+/* Header */
 .header {
-  background-color: #0047ab;
-  color: white;
+  background: #0047ab;
+  color: #fff;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 8px;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 28px;
+}
+
+.header p {
+  color: #ffcc00;
+  margin-top: 8px;
 }
 
 /* Search Bar */
@@ -93,18 +107,40 @@ body {
 /* Filter Section */
 .filter-section {
   padding: 20px;
-  text-align: center;
+  overflow-x: auto;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.category-buttons::-webkit-scrollbar {
+  height: 6px;
+}
+
+.category-buttons::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.category-buttons::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .category-buttons button {
   padding: 10px 20px;
-  margin: 10px 10px;
+  margin: 10px 20px;
   border: none;
   background-color: #003a66;
   color: white;
   border-radius: 12px;
   font-weight: bold;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 /* Job Content */
