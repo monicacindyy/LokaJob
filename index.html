@@ -77,20 +77,12 @@
 
   for (let i = 0; i < cards.length; i++) {
     let text = cards[i].innerText.toLowerCase();
-<<<<<<< HEAD
-     if (input === " ") {
-=======
      if (input === "") {
->>>>>>> cb8583159e0f2ca9d2f7a94e9d66218db93f9cff
       cards[i].style.display = "block";
      }
      else {
       cards[i].style.display =
-<<<<<<< HEAD
-      text.includes(input) ? "block : none";
-=======
       text.includes(input) ? "block" : "none";
->>>>>>> cb8583159e0f2ca9d2f7a94e9d66218db93f9cff
      }
   }
 }
