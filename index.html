@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Beranda - LokaJob</title>
+  <link rel="stylesheet" href="CSS/Style_Home.css" />
+</head>
+<body>
+  <div class="layout">
+  <div class="sidebar">
+    <div class="logo">LokaJob</div>
+    <ul class="menu">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="Company.html">Company</a></li>
+      <li><a href="Jobsite.html">Job</a></li>
+      <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </div>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <h1>Selamat Datang di LokaJob</h1>
+      <p>Temukan pekerjaan impianmu di sini!</p>
+    </div>
+
+    <div class="search-wrapper">
+     <div class="search-wrapper">
+     <input type="text" id="searchInput" placeholder="Cari Lowongan Pekerjaan...">
+     <button onclick="searchJob()">Search</button>
+     </div>
+
+    <div class="Job-list">
+     <div class="job-card">Desainer Grafis</div>
+     <div class="job-card">Guru Bahasa Inggris</div>
+     <div class="job-card">Administrasi Perkantoran</div>
+     <div class="job-card">Dokter Gigi</div>
+     <div class="job-card">IT</div>
+    </div>
+
+    <div class="filter-wrapper">
+      <div class="category-buttons">
+        <button>IT</button>
+        <button>Finance</button>
+        <button>Marketing</button>
+        <button>Desain</button>
+        <button>Kesehatan</button>
+        <button>Pendidikan</button>
+        <button>Teknik</button>
+        <button>Logistik</button>
+        <button>Hukum</button>
+        <button>Lainnya</button>
+      </div>
+    </div>
+
+    <div class="job-content">
+      <div class="job-card">
+        <img src="dokter-gigi.jpg" alt="Lowongan Dokter Gigi" style="width:100px; height:100px; object-fit:cover; border-radius: 8px;">
+        <h3>Dokter Gigi</h3>
+        <p>Klinik Gigi Sehat membutuhkan dokter gigi dengan pengalaman minimal 2 tahun.</p>
+      </div>
+
+      <div class="job-card">
+        <img src="IT-support.jpg" alt="Lowongan IT Support" style="width:100px; height:100px; object-fit:cover; border-radius: 8px;">
+        <h3>IT Support</h3>
+        <p>Dibutuhkan IT Support di perusahaan teknologi, penempatan Jakarta.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  function searchJob() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let cards = document.getElementsByClassName("job-card");
+
+  for (let i = 0; i < cards.length; i++) {
+    let text = cards[i].innerText.toLowerCase();
+     if (input === "") {
+      cards[i].style.display = "block";
+     }
+     else {
+      cards[i].style.display =
+      text.includes(input) ? "block" : "none";
+     }
+  }
+}
+</script>
+</body>
+</html>

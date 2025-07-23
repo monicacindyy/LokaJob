@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LokaJob - Login</title>
+  <link rel="stylesheet" href="CSS/Style_Login.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login to LokaJob</h2>
+    <form>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="📧 you@example.com" required>
+
+      <label for="password">Password:</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" name="password" placeholder="🔒 your password" required>
+        <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+      </div>
+
+      <label class="remember">
+        <input type="checkbox" id="remember"> Remember Me
+      </label>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+
+    <div class="register-link">
+      Don’t have an account? <a href="registration.html">Register here</a>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      const passwordField = document.getElementById("password");
+      const toggleBtn = document.querySelector(".toggle-password");
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleBtn.textContent = "🙈";
+      } else {
+        passwordField.type = "password";
+        toggleBtn.textContent = "👁️";
+      }
+    }
+  </script>
+</body>
+</html>

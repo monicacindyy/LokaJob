@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  background-color: #f4f7fb;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #2c3e50;
+  min-height: 100vh;
+  padding: 20px 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  margin: 12px 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  background-color: #34495e;
+  color: #ffcc00;
+}
+
+.main-content {
+  margin-left: 220px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.header {
+  background-color: #0047ab;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.header p {
+  color: #ffcc00;
+  margin-top: 8px;
+}
+
+.tips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tip-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.tip-card h3 {
+  font-size: 18px;
+  color: #163c7d;
+  margin-bottom: 10px;
+}
+
+.tip-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.tip-card a {
+  color: #0047ab;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tip-card a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive dan Modal ditambahkan langsung */
+.filter-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #0047ab;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 8px;
+    text-align: left;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .tips-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
