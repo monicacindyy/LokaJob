@@ -162,6 +162,14 @@ body {
   padding: 20px;
 }
 
+.job-list {
+  display: flex;
+  flex-warp: warp;
+  gap:20px;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
 @media (max-width: 768px) {
   .sidebar {
     position: absolute;
