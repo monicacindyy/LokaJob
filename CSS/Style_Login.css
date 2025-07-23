@@ -1,0 +1,118 @@
+/* Tampilan dasar */ 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url("../IMAGES/Fate.Grand.Order.full.3228764.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Kotak login */
+.container {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Judul */
+h2 {
+  text-align: center;
+  color: #00296b;
+  margin-bottom: 25px;
+}
+
+/* Label & Input */
+label {
+  display: block;
+  margin-top: 15px;
+  color: #00296b;
+  font-weight: 600;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Tombol login */
+.btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  background-color: #00296b;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0051a2;
+}
+
+/* Checkbox */
+.remember {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: #00296b;
+  font-size: 0.9em;
+}
+
+.remember input {
+  margin-right: 8px;
+}
+
+/* Toggle password */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/* Link ke register */
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-link a {
+  color: #d62828;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
