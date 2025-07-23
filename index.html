@@ -27,8 +27,13 @@
     </div>
 
     <div class="search-wrapper">
-      <input type="text" placeholder="Cari lowongan pekerjaan..." />
-      <button>Search</button>
+     <input type="text" id="searchInput" placeholder="Cari Lowongan Pekerjaan...">
+     <button onclick="searchJob()">Search</button>
+     <div class="job-card">Desainer Grafis</div>
+     <div class="job-card">Guru Bahasa Inggris</div>
+     <div class="job-card">Administrasi Perkantoran</div>
+     <div class="job-card">Dokter Gigi</div>
+     <div class="job-card">IT</div>
     </div>
 
     <div class="filter-wrapper">
@@ -47,9 +52,30 @@
     </div>
 
     <div class="job-content">
-      <div class="job-card">Job 1</div>
-      <div class="job-card">Job 2</div>
+      <div class="job-card">
+        <img src="dokter-gigi.jpg" alt="Lowongan Dokter Gigi" style="width:100px; height:100px; object-fit:cover; border-radius: 8px;">
+        <h3>Dokter Gigi</h3>
+        <p>Klinik Gigi Sehat membutuhkan dokter gigi dengan pengalaman minimal 2 tahun.</p>
+      </div>
+
+      <div class="job-card">
+        <img src="IT-support.jpg" alt="Lowongan IT Support" style="width:100px; height:100px; object-fit:cover; border-radius: 8px;">
+        <h3>IT Support</h3>
+        <p>Dibutuhkan IT Support di perusahaan teknologi, penempatan Jakarta.</p>
+      </div>
     </div>
   </div>
+
+<script>
+  function searchJob() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let cards = document.getElementsByClassName("job-card");
+
+  for (let i = 0; i < cards.length; i++) {
+    let text = cards[i].innerText.toLowerCase();
+    cards[i].style.display = text.includes(input) ? "" : "none";
+  }
+}
+</script>
 </body>
 </html>
