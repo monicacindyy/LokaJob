@@ -73,9 +73,15 @@
 
   for (let i = 0; i < cards.length; i++) {
     let text = cards[i].innerText.toLowerCase();
-    cards[i].style.display = text.includes(input) ? "" : "none";
+     if (input === "") {
+      cards[i].style.display = "block";
+     }
+     else {
+      cards[i].style.display =
+      text.includes(input) ? "block" : "none";
+     }
   }
-  }
-  </script>
+}
+</script>
 </body>
 </html>
