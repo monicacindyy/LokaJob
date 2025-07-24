@@ -138,12 +138,12 @@
 
   for (let i = 0; i < cards.length; i++) {
     let text = cards[i].innerText.toLowerCase();
-     if (input === "") {
-      cards[i].style.display = "";
+     if (input === "flex") {
+      cards[i].style.display = "flex";
      }
      else {
       cards[i].style.display =
-      text.includes(input) ? "" : "none";
+      text.includes(input) ? "flex" : "none";
      }
   }
 }
