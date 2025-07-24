@@ -111,17 +111,18 @@ body {
 }
 
 .job-content {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  padding: 20px;
 }
 
 .job-card {
-  background-color: #ffffff; /* <--- Diubah dari abu ke putih */
+  background-color: #ffffff;
   padding: 20px;
-  width: calc(25% - 20px);
+  width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* soft shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s;
 }
 
@@ -150,15 +151,16 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .job-card {
-    width: calc(33.33% - 20px);
+  .job-content {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .job-card {
-    width: calc(50% - 20px);
+  .job-content {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
   .search-bar input[type="text"] {
     width: 70%;
@@ -166,16 +168,15 @@ body {
 }
 
 @media (max-width: 480px) {
-  .job-card {
-    width: 100%;
+  .job-content {
+    grid-template-columns: 1fr;
   }
-
+}
   .search-bar input[type="text"] {
     width: 100%;
   }
 }
 
-/* Reorder Admin Perkantoran supaya muncul di bawah Dokter Gigi */
 .job-card:nth-child(4) {
   order: 5;
 }
