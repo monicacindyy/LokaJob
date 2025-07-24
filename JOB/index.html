@@ -112,41 +112,43 @@
 </a>
 </div>
 
-  <script>
+ <script>
   const buttons = document.querySelectorAll(".filter-btn");
   const jobs = document.querySelectorAll(".job-card");
+  const searchInput = document.getElementById("searchInput");
+
+  function filterJobs(kategori, keyword) {
+    jobs.forEach(job => {
+      const jobKategori = job.getAttribute("data-kategori");
+      const text = job.innerText.toLowerCase();
+      const matchKategori = kategori === "all" || jobKategori === kategori;
+      const matchKeyword = text.includes(keyword);
+      job.style.display = (matchKategori && matchKeyword) ? "flex" : "none";
+    });
+  }
 
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const kategori = btn.getAttribute("data-filter");
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
 
-      jobs.forEach(job => {
-        if (kategori === "all" || job.getAttribute("data-kategori") === kategori) {
-          job.style.display = "block";
-        } else {
-          job.style.display = "none";
-        }
-      });
+      const kategori = btn.getAttribute("data-filter");
+      const keyword = searchInput.value.toLowerCase();
+      filterJobs(kategori, keyword);
     });
   });
-</script>
 
-  <script>
   function searchJob() {
-  let input = document.getElementById("searchInput").value.toLowerCase();
-  let cards = document.getElementsByClassName("job-card");
-
-  for (let i = 0; i < cards.length; i++) {
-    let text = cards[i].innerText.toLowerCase();
-     if (input === "flex") {
-      cards[i].style.display = "flex";
-     }
-     else {
-      cards[i].style.display =
-      text.includes(input) ? "flex" : "none";
-     }
+    const keyword = searchInput.value.toLowerCase();
+    const kategori = getActiveCategory();
+    filterJobs(kategori, keyword);
   }
-}
+
+  function getActiveCategory() {
+    const activeBtn = document.querySelector(".filter-btn.active");
+    return activeBtn ? activeBtn.getAttribute("data-filter") : "all";
+  }
 </script>
+
 </body>
 </html>
