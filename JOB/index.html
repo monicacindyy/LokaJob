@@ -139,11 +139,11 @@
   for (let i = 0; i < cards.length; i++) {
     let text = cards[i].innerText.toLowerCase();
      if (input === "") {
-      cards[i].style.display = "block";
+      cards[i].style.display = "";
      }
      else {
       cards[i].style.display =
-      text.includes(input) ? "block" : "none";
+      text.includes(input) ? "" : "none";
      }
   }
 }
