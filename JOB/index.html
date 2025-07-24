@@ -33,22 +33,22 @@
 
     <div class="filter-wrapper">
       <div class="category-buttons">
-        <button>IT</button>
-        <button>Finance</button>
-        <button>Marketing</button>
-        <button>Desain</button>
-        <button>Kesehatan</button>
-        <button>Pendidikan</button>
-        <button>Teknik</button>
-        <button>Logistik</button>
-        <button>Hukum</button>
-        <button>Lainnya</button>
+        <button data-filter="IT">IT</button>
+        <button data-filter="Finance">Finance</button>
+        <button data-filter="Marketing">Marketing</button>
+        <button data-filter="Desain">Desain</button>
+        <button data-filter="Kesehatan">Kesehatan</button>
+        <button data-filter="Pendidikan">Pendidikan</button>
+        <button data-filter="Teknik">Teknik</button>
+        <button data-filter="Logistik">Logistik</button>
+        <button data-filter="Hukum">Hukum</button>
+        <button data-filter="Lainnya">Lainnya</button>
       </div>
     </div>
 
   <div class="job-content">
   <a href="dokter-gigi.html" class="job-link">
-  <div class="job-card">
+  <div class="job-card" data-kategori="Kesehatan">
     <img src="../IMAGES/dokter-gigi.jpg" alt="Dokter Gigi">
     <h3>Dokter Gigi</h3>
     <p>Klinik Gigi Sehat membutuhkan dokter gigi dengan pengalaman minimal 2 tahun.</p>
@@ -56,7 +56,7 @@
   </a>
 
   <a href="IT-support.html" class="job-link">
-  <div class="job-card">
+  <div class="job-card" data-kategori="IT">
     <img src="../IMAGES/IT-support.jpg" alt="Lowongan IT Support">
     <h3>IT Support</h3>
     <p>Dibutuhkan IT Support di perusahaan teknologi, penempatan Jakarta.</p>
@@ -64,7 +64,7 @@
   </a>
 
   <a href="graphic-designer.html" class="job-link">
-  <div class="job-card">
+  <div class="job-card" data-kategori="Desain">
     <img src="../IMAGES/graphic-designer.jpg" alt="Graphic Designer">
     <h3>Graphic Designer</h3>
     <p>Dicari graphic designer kreatif untuk brand fashion lokal. Penempatan Bandung atau remote.</p>
@@ -72,7 +72,7 @@
   </a>
 
   <a href="admin.html" class="job-link">
-  <div class="job-card">
+  <div class="job-card" data-kategori="Lainnya">
     <img src="../IMAGES/admin.jpg" alt="Administrasi Perkantoran">
     <h3>Administrasi Perkantoran</h3>
     <p>PT. Amanah Jaya membutuhkan staf administrasi untuk kantor distribusi. Minimal lulusan SMA/SMK.</p>
@@ -80,7 +80,7 @@
   </a>
 
 <a href="marketing.html" class="job-link">
-<div class="job-card">
+<div class="job-card" data-kategori="Marketing">
   <img src="../IMAGES/marketing.jpg" alt="Marketing">
   <h3>Marketing</h3>
   <p>PT. Sukses Bersama membuka lowongan staf marketing digital. Penempatan Surabaya.</p>
@@ -88,7 +88,7 @@
 </a>
 
 <a href="guru.html" class="job-link">
-<div class="job-card">
+<div class="job-card" data-kategori="Pendidikan">
   <img src="../IMAGES/guru.jpg" alt="Guru Bahasa Inggris">
   <h3>Guru Bahasa Inggris</h3>
   <p>Lembaga Kursus Smart English membutuhkan guru bahasa Inggris untuk mengajar siswa dari berbagai tingkat. Penempatan Bekasi.</p>
@@ -96,7 +96,7 @@
 </a>
 
 <a href="koki.html" class="job-link">
-<div class="job-card">
+<div class="job-card" data-kategori="Lainnya">
   <img src="../IMAGES/koki.jpg" alt="Lowongan Koki">
   <h3>Koki</h3>
   <p>Restoran Restoran Rasa Nusantara mencari koki berpengalaman untuk masakan Nusantara. Penempatan di Yogya.</p>
@@ -104,13 +104,32 @@
 </a>
 
 <a href="tekniksi.html" class="job-link">
-<div class="job-card">
+<div class="job-card" data-kategori="Teknik">
   <img src="../IMAGES/teknisi.jpg" alt="Lowongan Teknisi Mesin">
   <h3>Teknisi Mesin</h3>
   <p>PT Maju Teknik Jaya membuka lowongan teknisi mesin untuk lulusan SMK/D3 Teknik Mesin atau Elektro..</p>
 </div>
 </a>
 </div>
+
+  <script>
+  const buttons = document.querySelectorAll(".filter-btn");
+  const jobs = document.querySelectorAll(".job-card");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const kategori = btn.getAttribute("data-filter");
+
+      jobs.forEach(job => {
+        if (kategori === "all" || job.getAttribute("data-kategori") === kategori) {
+          job.style.display = "block";
+        } else {
+          job.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
 
   <script>
   function searchJob() {
