@@ -119,8 +119,8 @@ body {
   gap: 20px;
   padding: 20px;
   align-items: start;
-  justify-items: start;
-  justify-content: start;
+  justify-items: flex-start;
+  justify-content: flex-start;
 }
 
 .job-link {
@@ -135,7 +135,8 @@ body {
   align-items: flex-start;
   background-color: #ffffff;
   padding: 20px;
-  width: 100%;
+  max-width: 600px;
+  flex: 1 1 280px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s;
