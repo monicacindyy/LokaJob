@@ -6,7 +6,6 @@
 }
 
 body {
-  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f7fb;
 }
@@ -65,8 +64,8 @@ body {
 }
 
 .header p {
-    color: #ffcc00;
-    font-weight: 500;
+  color: #ffcc00;
+  font-weight: 500;
 }
 
 .search-bar {
@@ -96,7 +95,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: flex-start; /* <--- Digeser ke kiri */
+  justify-content: flex-start;
   margin-bottom: 20px;
 }
 
@@ -114,26 +113,33 @@ body {
   background-color: #0047ab;
 }
 
+/* ✅ FIXED BAGIAN INI */
 .job-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   padding: 20px;
   align-items: start;
+  justify-items: start;
+}
+
+.job-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* INI PENTING BIAR KOTAK NANGKAP FULL */
 }
 
 .job-card {
-  display: flex:
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: #ffffff;
   padding: 20px;
   width: 100%;
-  max-width: 600px;
-  margin-bottom: 24px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s;
+  text-align: left;
 }
 
 .job-card:hover {
@@ -154,12 +160,7 @@ body {
   margin: 0;
 }
 
-.job-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* RESPONSIVE */
+/* RESPONSIVE FIX */
 @media (max-width: 1024px) {
   .job-content {
     grid-template-columns: repeat(2, 1fr);
@@ -170,7 +171,6 @@ body {
   .job-content {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
   .search-bar input[type="text"] {
     width: 70%;
@@ -181,12 +181,8 @@ body {
   .job-content {
     grid-template-columns: 1fr;
   }
-}
+
   .search-bar input[type="text"] {
     width: 100%;
   }
-}
-
-.job-card:nth-child(4) {
-  order: 5;
 }
