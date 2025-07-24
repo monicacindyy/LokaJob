@@ -1,52 +1,77 @@
-/* Container layout */
-.container {
+/* Reset */ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
   display: flex;
-  font-family: Arial, sans-serif;
+  background-color: #f6f9fc;
 }
 
 /* Sidebar */
 .sidebar {
-  width: 220px;
-  background-color: #003366;
-  color: white;
-  height: 100vh;
-  padding: 20px;
+  width: 200px;
+  background: #2c3e50;
+  min-height: 100vh;
+  padding: 20px 10px;
   position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
 }
-.sidebar h2 {
+
+.logo {
   font-size: 24px;
+  font-weight: bold;
+  text-align: center;
   margin-bottom: 20px;
 }
-.sidebar ul {
+
+.menu {
   list-style: none;
-  padding: 0;
 }
-.sidebar ul li {
-  margin-bottom: 10px;
+
+.menu li {
+  margin: 12px 0;
 }
-.sidebar ul li a {
-  color: white;
+
+.menu a {
+  color: #fff;
   text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s;
 }
-.sidebar ul li a:hover {
-  text-decoration: underline;
+
+.menu a:hover,
+.menu a.active {
+  background: #34495e;
+  color: #ffcc00;
 }
+
 
 /* Main content */
 .main-content {
-  margin-left: 240px;
-  padding: 30px;
+  margin-left: 220px;
+  padding: 20px;
   flex-grow: 1;
 }
 
-/* Header */
-.main-header h1 {
-  font-size: 32px;
-  color: #003366;
+.header {
+  background-color: #0047ab;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
 }
-.main-header p {
-  font-size: 18px;
-  color: #666;
+
+.header p {
+  color: #ffcc00;
 }
 
 /* Job detail section */
