@@ -82,7 +82,7 @@ body {
 .search-bar button {
   padding: 10px 20px;
   border: none;
-  background-color: #0c356a;
+  background-color: #0047ab;
   color: white;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
@@ -97,7 +97,7 @@ body {
 }
 
 .category-buttons button {
-  background-color: #0c356a;
+  background-color:#0047ab;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -107,7 +107,7 @@ body {
 }
 
 .category-buttons button:hover {
-  background-color: #14498d;
+  background-color: #0047ab;
 }
 
 .job-content {
