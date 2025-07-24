@@ -153,10 +153,11 @@ body {
 .job-card {
   background-color: #ddd;
   padding: 15px;
-  width: calc(25% - 20px); /* 4 kolom per baris */
+  width: calc(25% - 20px);
   border-radius: 10px;
   box-sizing: border-box;
   transition: transform 0.2s;
+  text-align: left;
 }
 
 .job-card:hover {
@@ -165,10 +166,12 @@ body {
 
 .job-card img {
   width: 100%;
-  height: 120px;
+  height: 150px;
   object-fit: cover;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
+
 
 @media (max-width: 992px) {
   .job-card {
