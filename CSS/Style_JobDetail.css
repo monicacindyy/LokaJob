@@ -1,0 +1,75 @@
+/* Container layout */
+.container {
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #003366;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+}
+.sidebar h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+}
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+.main-content {
+  margin-left: 240px;
+  padding: 30px;
+  flex-grow: 1;
+}
+
+/* Header */
+.main-header h1 {
+  font-size: 32px;
+  color: #003366;
+}
+.main-header p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Job detail section */
+.job-detail h2, .job-detail h3 {
+  color: #003366;
+  margin-top: 20px;
+}
+.job-detail ul {
+  margin-left: 20px;
+  line-height: 1.6;
+}
+
+/* Back link */
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  text-decoration: none;
+  background-color: #003366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.back-link:hover {
+  background-color: #005599;
+}
