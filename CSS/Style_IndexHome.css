@@ -143,6 +143,11 @@ body {
   margin: 0;
 }
 
+.job-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* RESPONSIVE */
 @media (max-width: 1024px) {
   .job-card {
