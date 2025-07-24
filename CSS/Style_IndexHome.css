@@ -113,7 +113,6 @@ body {
   background-color: #0047ab;
 }
 
-/* ✅ FIXED BAGIAN INI */
 .job-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -121,12 +120,13 @@ body {
   padding: 20px;
   align-items: start;
   justify-items: start;
+  justify-content: start;
 }
 
 .job-link {
   text-decoration: none;
   color: inherit;
-  display: block; /* INI PENTING BIAR KOTAK NANGKAP FULL */
+  display: block; 
 }
 
 .job-card {
