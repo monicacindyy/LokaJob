@@ -4,14 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jobsite - LokaJob</title>
-  <link rel="stylesheet" href="CSS/Style_JobSide.css" />
+  <link rel="stylesheet" href="CSS/Style_Jobsite.css" />
   <style>
     html { scroll-behavior: smooth; }
+
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .modal-content h2 { margin-top: 0; }
+    .modal-content input, .modal-content textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .modal-content button {
+      background: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .modal-content button:hover { background: #0056b3; }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+  
+    .company {
+      display: flex;
+      align-items: center;
+      gap: 6px; 
+      font-weight: 500;
+    }
+    .logo-inline {
+      width: 20px;   
+      height: 20px;  
+      object-fit: contain; 
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Sidebar -->
+  
   <div class="sidebar">
     <div class="logo">LokaJob</div>
     <ul class="menu">
@@ -24,16 +85,16 @@
     </ul>
   </div>
 
-  <!-- Main Content -->
+  
   <div class="main-content">
 
-    <!-- Header Section -->
+
     <header class="header">
       <h1>Lowongan Pekerjaan</h1>
       <p>Cari peluang terbaik untuk kariermu</p>
     </header>
 
-    <!-- Search & Filter -->
+  
     <section class="search-filter">
       <div class="search-wrap">
         <input type="text" placeholder="Cari pekerjaan..." />
@@ -61,50 +122,92 @@
       </div>
     </section>
 
-    <!-- Job Listings -->
+    
     <section class="jobs-list fade-in">
-      <!-- contoh card 1 -->
       <div class="job-card">
         <div class="job-info">
           <h3>Frontend Developer</h3>
-          <p class="company">PT. Kreasi Digital</p>
+          <p class="company">
+            <img src="IMAGES/kreasi.png" alt="PT Kreasi Digital" class="logo-inline">
+            PT. Kreasi Digital
+          </p>
           <p class="location">Semarang, Jawa Tengah</p>
         </div>
         <div class="job-meta">
           <span class="type">Full-time</span>
-          <button class="apply-btn">Lamar</button>
+          <button class="apply-btn" onclick="openModal('Frontend Developer')">Lamar</button>
         </div>
       </div>
 
-      <!-- contoh card 2 -->
       <div class="job-card">
         <div class="job-info">
           <h3>Backend Engineer</h3>
-          <p class="company">CV. Solusi Teknologi</p>
+          <p class="company">
+            <img src="IMAGES/backend.png" alt="CV Solusi Teknologi" class="logo-inline">
+            CV. Solusi Teknologi
+          </p>
           <p class="location">Jakarta</p>
         </div>
         <div class="job-meta">
           <span class="type">Part-time</span>
-          <button class="apply-btn">Lamar</button>
+          <button class="apply-btn" onclick="openModal('Backend Engineer')">Lamar</button>
         </div>
       </div>
 
-      <!-- contoh card 3 -->
       <div class="job-card">
         <div class="job-info">
           <h3>Akuntan Junior</h3>
-          <p class="company">PT. Finansia Bersama</p>
+          <p class="company">
+            <img src="IMAGES/finansia.png" alt="PT Finansia Bersama" class="logo-inline">
+            PT. Finansia Bersama
+          </p>
           <p class="location">Surabaya</p>
         </div>
         <div class="job-meta">
           <span class="type">Internship</span>
-          <button class="apply-btn">Lamar</button>
+          <button class="apply-btn" onclick="openModal('Akuntan Junior')">Lamar</button>
         </div>
       </div>
-
-      <!-- tambahkan card lain sesuai data -->
     </section>
 
   </div>
+
+  <div id="modalLamar" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2 id="jobTitle">Form Lamaran</h2>
+      <form>
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="text" placeholder="Usia" required>
+        <input type="text" placeholder="Alamat Lengkap" required>
+        <input type="text" placeholder="Nomor Whatsapp" required>
+        <input type="email" placeholder="Email" required>
+         <label> Tambahkan CV </label>
+        <input type="file" placeholder="Masukan CV" required> 
+        <textarea placeholder="Pesan lamaran..." rows="4"></textarea>
+        <button type="submit">Kirim Lamaran</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+
+    function openModal(job) {
+      document.getElementById('modalLamar').style.display = 'flex';
+      document.getElementById('jobTitle').innerText = "Lamar: " + job;
+    }
+
+    function closeModal() {
+      document.getElementById('modalLamar').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      let modal = document.getElementById('modalLamar');
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
 </body>
 </html>
