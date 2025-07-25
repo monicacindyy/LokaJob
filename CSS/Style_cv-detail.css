@@ -106,9 +106,10 @@ body {
 }
 
 .detail-content li::before {
-  content: "/ ";
   font-style: italic;
-  margin-right: 5px;
+  font-family: Georgia, serif;
+  margin-right: 6px;
+  color: #555; 
 }
 
 .back {
