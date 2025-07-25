@@ -102,7 +102,12 @@ body {
 }
 
 .detail-content li {
-  list-style: disc;
+  list-style: none;
+}
+
+.detail-content li::before {
+  font-style: italic;
+  margin-right: 5px;
 }
 
 .back {
