@@ -60,60 +60,60 @@
     </div>
   </div>
 
-   <script>
-    const buttons = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.tip-card');
+  <script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.tip-card');
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelector('.filter-btn.active')?.classList.remove('active');
-        btn.classList.add('active');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.filter-btn.active')?.classList.remove('active');
+      btn.classList.add('active');
 
-        const category = btn.getAttribute('data-category');
-        cards.forEach(card => {
-          if (category === 'all' || card.classList.contains(category)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // Scroll fade-in
-    const fadeEls = document.querySelectorAll('.fade-in');
-    window.addEventListener('scroll', () => {
-      fadeEls.forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-          el.classList.add('visible');
+      const category = btn.getAttribute('data-category');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
         }
       });
     });
+  });
 
-    // Modal logic
-    const tipsModal = document.getElementById('tipsModal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalContent = document.getElementById('modal-content');
-    const closeBtn = document.querySelector('.close-btn');
+  const fadeEls = document.querySelectorAll('.fade-in');
+  window.addEventListener('scroll', () => {
+    fadeEls.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  });
 
-    document.querySelectorAll('.tip-card a').forEach((btn, index) => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
+  const tipsModal = document.getElementById('tipsModal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalContent = document.getElementById('modal-content');
+  const closeBtn = document.querySelector('.close-btn');
+
+  document.querySelectorAll('.tip-card a').forEach((btn, index) => {
+    btn.addEventListener('click', (e) => {
+      if (btn.dataset.modal === "true") {
+        e.preventDefault(); // hanya cegah default kalau mau modal
         modalTitle.textContent = document.querySelectorAll('.tip-card h3')[index].textContent;
         modalContent.textContent = document.querySelectorAll('.tip-card p')[index].textContent;
         tipsModal.style.display = 'flex';
-      });
-    });
-
-    closeBtn.onclick = () => {
-      tipsModal.style.display = 'none';
-    };
-
-    window.onclick = (e) => {
-      if (e.target === tipsModal) {
-        tipsModal.style.display = 'none';
       }
-    };
-  </script>
+    });
+  });
+
+  closeBtn.onclick = () => {
+    tipsModal.style.display = 'none';
+  };
+
+  window.onclick = (e) => {
+    if (e.target === tipsModal) {
+      tipsModal.style.display = 'none';
+    }
+  };
+</script>
 </body>
 </html>
