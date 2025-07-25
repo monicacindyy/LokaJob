@@ -106,6 +106,7 @@ body {
 }
 
 .detail-content li::before {
+  content: "/ ";
   font-style: italic;
   margin-right: 5px;
 }
