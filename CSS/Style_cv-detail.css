@@ -103,9 +103,6 @@ body {
 
 .detail-content li {
   list-style: none;
-}
-
-.detail-content li::before {
   font-style: italic;
   font-family: Georgia, serif;
   margin-right: 6px;
