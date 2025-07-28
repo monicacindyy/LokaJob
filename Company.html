@@ -54,8 +54,8 @@
 
   <div class="main-content">
     <div class="header">
-      <h1>Perusahaan</h1>
-      <p>Temukan perusahaan terbaik yang membuka lowongan kerja</p>
+      <h1>Company</h1>
+      <p>Discover Top Campanies currently Hiring</p>
     </div>
 
     <div class="company-grid">
@@ -63,27 +63,28 @@
       <div class="company-card fade-in">
         <img src="IMAGES/logo.png" alt="Logo PT Maju Jaya" class="company-logo">
         <h3>PT Maju Jaya</h3>
-        <p>Perusahaan IT yang bergerak di bidang software development.</p>
+        <p>Perusahaan IT yang bergerak di bidang software development, khususnya pengembangan aplikasi mobile dan web untuk mendukung transformasi digital bisnis.</p>
+  <p>An IT company specializing in software development, focusing on mobile and web applications to support business digital transformation.</p>
+</p>
         <span class="location">Jakarta</span>
-        <a href="#" class="detail-btn" 
-           onclick="openModal(
+        <a href="#" class="detail-btn" onclick="openModal(
              'PT Maju Jaya', 
-             'Software Engineer<br>Pria/Wanita<br>Pendidikan:<br>D4/S1 Teknik Informatika<br>D4/S1 Sistem Informasi<br>D4/S1 Teknologi Informasi<br>Gaji: Rp8.000.000 - Rp12.000.000<br> Bergabung bersama tim kami untuk mengembangkan aplikasi berbasis web dan mobile.')">
-          Lihat Lowongan
+             'Software Engineer<br>Male/Female<br>with Education background in:<br>D4/S1 Teknik Informatika<br>D4/S1 Sistem Informasi<br>D4/S1 Teknologi Informasi<br>Gaji: Rp8.000.000 - Rp12.000.000<br> Join our team to develop web and mobile-based applications that drive digital transformation for businesses')">
+          view vacancies
         </a>
       </div>
 
-      <!-- CV Sukses Makmur -->
+      
       <div class="company-card fade-in">
         <img src="IMAGES/indofood.jpg" alt="Logo PT indofood" class="company-logo">
         <h3>CV Sukses Makmur</h3>
-        <p>Produsen makanan ringan yang sudah menembus pasar ekspor.</p>
+        <p>A snack food manufacturer with an active presence in the international markets/ export market.</p>
+        <p>The company adheres to global food safety standards,Offering high-quality, ready-to-eat products, tailors its offerings to local tastes, and continuously innovates to strengthen its position in the global snack industry.</p>
         <span class="location">Bandung</span>
-        <a href="#" class="detail-btn" 
-           onclick="openModal(
+        <a href="#" class="detail-btn" onclick="openModal(
              'CV Sukses Makmur', 
-             'Marketing Executive<br>Wanita<br>Pendidikan:<br>D3 Manajemen <br> S1 Ilmu Komunikasi<br>D4/S1 Manajemen Bisnis<br>Gaji: Rp3.000.000 - Rp7.000.000<br> Membantu strategi pemasaran produk makanan ringan ke pasar lokal & ekspor.')">
-          Lihat Lowongan
+             'Marketing Executive<br>Female<br>with Education background in :<br>D3 Manajemen <br> S1 Ilmu Komunikasi<br>D4/S1 Manajemen Bisnis<br>Gaji: Rp3.000.000 - Rp7.000.000<br> Assist in the marketing strategy of snack products to local and export markets.')">
+          View vacancies
         </a>
       </div>
 
@@ -91,38 +92,39 @@
       <div class="company-card fade-in">
         <img src="IMAGES/jd - id.png" alt="Logo PT JD.ID" class="company-logo">
         <h3>StartupIn</h3>
-        <p>Startup teknologi pendidikan berbasis AIA dan mobile learning.</p>
+        <p> Startup teknologi yang mengembangkan platform berbasis AI untuk pendidikan dan pelatihan online yang interaktif dan personal.</p>
+  <p>A tech startup building smart, personalized solutions for interactive online education and training, designed to improve engagement, adapt to individual learning needs, and deliver measurable outcomes.</p>
+  
         <span class="location">Yogyakarta</span>
-        <a href="#" class="detail-btn" 
-           onclick="openModal(
+        <a href="#" class="detail-btn" onclick="openModal(
              'StartupIn', 
-             'UI/UX Designer<br>Pria/Wanita<br>Pendidikan:<br>D4/S1 Teknik Informatika<br>D4/S1 Sistem Informasi<br>D4/S1 Teknologi Informasi<br>D4/S1 Ilmu Komputer<br>D4/S1 Teknik Komputer<br>Gaji: Rp7.000.000 - Rp10.000.000<br> Merancang tampilan aplikasi edukasi berbasis AI agar mudah digunakan.')">
-          Lihat Lowongan
+             'UI/UX Designer<br>Male/Female<br>with Education background in:<br>D4/S1 Teknik Informatika<br>D4/S1 Sistem Informasi<br>D4/S1 Teknologi Informasi<br>D4/S1 Ilmu Komputer<br>D4/S1 Teknik Komputer<br>Gaji: Rp7.000.000 - Rp10.000.000<br>Designing the interface of an AI-based educational application to be easy to use.')">
+          View vacancies
         </a>
       </div>
     </div>
   </div>
 
   <!-- ✅ Modal Popup untuk Detail Lowongan -->
-  <div id="lowonganModal" class="modal">
+  <div id="funding opportunity" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="modalTitle">Detail Lowongan</h2>
+      <h2 id="modalTitle"> Vacancy Details</h2>
       <p id="modalContent"></p>
     </div>
   </div>
 
   <script>
     function openModal(companyName, content) {
-      document.getElementById("modalTitle").innerText = "Lowongan di " + companyName;
+      document.getElementById("modalTitle").innerText = "job vacancy " + companyName
       document.getElementById("modalContent").innerHTML = content;
-      document.getElementById("lowonganModal").style.display = "block";
+      document.getElementById("funding opportunity").style.display = "block";
     }
     function closeModal() {
-      document.getElementById("lowonganModal").style.display = "none";
+      document.getElementById("funding opportunity").style.display = "none";
     }
     window.onclick = function(event) {
-      const modal = document.getElementById("lowonganModal");
+      const modal = document.getElementById("funding opportunity");
       if (event.target === modal) {
         closeModal();
       }
