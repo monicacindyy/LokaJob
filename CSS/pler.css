@@ -239,93 +239,107 @@ body, html {
 }
 
 /* Sudah termasuk bagian sidebar dan header di atas */
-
-.company-container {
+/* Company Cards */
+/* Container Grid */
+.company-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 24px;
+  margin: 40px 0;
 }
 
+/* Kartu Perusahaan */
 .company-card {
   background: #fff;
+  padding: 16px;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .company-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.company-card h3 {
-  font-size: 18px;
-  color: #163c7d;
+/* Logo */
+.company-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
+/* Nama Perusahaan */
+.company-card h3 {
+  font-size: 18px;
+  color: #163c7d;
+  margin-bottom: 8px;
+}
+
+/* Deskripsi Singkat */
 .company-card p {
   font-size: 14px;
   color: #555;
   margin-bottom: 10px;
 }
 
-/* Tombol filter */
-.filter-wrapper {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.filter-dropdown {
-  position: relative;
-  display: inline-block;
-  margin-right: 1rem;
-}
-
-.filter-dropdown button {
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.filter-dropdown button:hover {
-  background-color: #ffcb05;
-}
-
-.filter-dropdown .kategori-options,
-.filter-dropdown .lokasi-options {
-  display: none;
-  position: absolute;
-  top: 110%;
-  left: 0;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 10;
-}
-
-.filter-dropdown .kategori-options button,
-.filter-dropdown .lokasi-options button {
+/* Lokasi */
+.location {
+  font-size: 13px;
+  color: #777;
   display: block;
-  padding: 10px 15px;
-  border: none;
-  width: 100%;
-  text-align: left;
-  background: none;
-  cursor: pointer;
+  margin-bottom: 10px;
 }
 
-.filter-dropdown .kategori-options button:hover,
-.filter-dropdown .lokasi-options button:hover {
-  background-color: #ffcb05;
+/* Tombol */
+.detail-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #0047ab;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.detail-btn:hover {
+  background-color: #003380;
+}
+
+@media (max-width: 1024px) {
+  .company-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* FILTER */
+.company-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+  
+}
+
+.company-filter select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  min-width: 200px;
 }
 
 /* Responsive */

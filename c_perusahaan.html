@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detail Perusahaan - Sari Roti</title>
-  <link rel="stylesheet" href="CSS/Style_Company-detail.css">
+  <link rel="stylesheet" href="CSS/pler.css">
 </head>
 <body>
 <div class="main-container">
@@ -36,53 +36,56 @@
         <p>Temukan Company terbaik yang membuka lowongan kerja</p>
       </div>
 
-<div class="filter-wrapper">
-<div class="filter-dropdown kategori-dropdown">
-  <button class="kategori-toggle">Pilih Kategori <span class="kategori-arrow">▾</span></button>
-<div class="kategori-options">
-  <button class="kategori-btn" data-kategori="all">Semua</button>
-  <button class="kategori-btn" data-kategori="pertanian">Pertanian</button>
-  <button class="kategori-btn" data-kategori="makanan">Makanan & Minuman</button>
-  <button class="kategori-btn" data-kategori="kesehatan">Kesehatan</button>
-</div>
-</div>
+    <section class="company-filter">
+    <select id="kategoriFilter">
+        <option value="all">Semua Kategori</option>
+        <option value="pertanian">Pertanian</option>
+        <option value="makanan">Makanan & Minuman</option>
+        <option value="kesehatan">Kesehatan</option>
+    </select>
 
+    <select id="lokasiFilter">
+        <option value="all">Semua Lokasi</option>
+        <option value="jakarta">Jakarta</option>
+        <option value="bandung">Bandung</option>
+        <option value="semarang">Semarang</option>
+    </select>
+    </section>
+        <div class="company-grid">
+        <!-- PT Nippon Indosari Corpindo Tbk -->
+        <div class="company-card fade-in">
+            <h3>PT Nippon Indosari Corpindo Tbk</h3>
+        <img src="IMAGES/Sari Rotijpg.jpg" alt="Logo Sari Roti" class="company-logo">
+        
+        <p>Produsen roti merek 'Sari Roti' yang memimpin pasar dengan jaringan distribusi luas di Indonesia.</p>
+        <span class="location">Bekasi</span>
+        <a href="comp_sari-roti.html" class="detail-btn">Lihat Perusahaan</a>
+        </div>
 
-<div class="filter-dropdown lokasi-dropdown">
-  <button class="lokasi-toggle">Pilih Lokasi <span class="lokasi-arrow">▾</span></button>
-  <div class="lokasi-options">
-    <button class="lokasi-btn" data-lokasi="all">Semua</button>
-    <button class="lokasi-btn" data-lokasi="jakarta">Jakarta</button>
-    <button class="lokasi-btn" data-lokasi="bandung">Bandung</button>
-    <button class="lokasi-btn" data-lokasi="semarang">Semarang</button>
-    <!-- tambah sesuai data -->
+        <!-- PT Mayora Indah Tbk -->
+        <div class="company-card fade-in">
+        <h3>PT Mayora Indah Tbk</h3>  
+            <img src="IMAGES/Mayora.png" alt="Logo Mayora" class="company-logo">
+        
+        <p>Perusahaan FMCG ternama yang memproduksi makanan dan minuman seperti Kopiko, Beng-Beng, dan Torabika.</p>
+        <span class="location">Tangerang</span>
+        <a href="comp_mayora.html" class="detail-btn">Lihat Perusahaan</a>
+        </div>
+
+        <!-- PT Indofood Sukses Makmur Tbk -->
+        <div class="company-card fade-in">
+        <img src="IMAGES/indofood.png" alt="Logo Indofood" class="company-logo">
+        <h3>PT Indofood Sukses Makmur Tbk</h3>
+        <p>Salah satu produsen makanan terbesar di Indonesia, dikenal luas dengan produk mi instan Indomie.</p>
+        <span class="location">Jakarta</span>
+        <a href="Detail_Indofood.html" class="detail-btn">Lihat Perusahaan</a>
+        </div>
+     </div>
   </div>
-</div>
-
-
-<div class="company-container">
-<div class="company-card" data-kategori="pertanian" data-lokasi="semarang">
-  <h3>PT Tani Subur</h3>
-  <p>Bidang: Pertanian | Lokasi: Semarang</p>
-</div>
-
-<div class="company-card" data-kategori="makanan" data-lokasi="jakarta">
-  <h3>PT Makan Lezat</h3>
-  <p>Bidang: Makanan | Lokasi: Jakarta</p>
-</div>
-
-<div class="company-card" data-kategori="kesehatan" data-lokasi="surabaya">
-  <h3>PT Sehat Sentosa</h3>
-  <p>Bidang: Kesehatan | Lokasi: Surabaya</p>
-</div>
-
-    </div>
-
     <footer class="footer">
-      <p>&copy; 2025 LokaJob. All rights reserved.</p>
+    <p>&copy; 2025 LokaJob. All rights reserved.</p>
     </footer>
-  </div>
-  </div>
+</div>
 <script>
   // Sidebar toggle
   function toggleSidebar() {
@@ -91,81 +94,31 @@
   }
 
   // ==== FILTER ELEMENT ====
-  const kategoriToggle = document.querySelector('.kategori-toggle');
-  const kategoriOptions = document.querySelector('.kategori-options');
-  const kategoriArrow = document.querySelector('.kategori-arrow');
-  const kategoriButtons = document.querySelectorAll('.kategori-btn');
+  const kategoriFilter = document.getElementById("kategoriFilter");
+  const lokasiFilter = document.getElementById("lokasiFilter");
+  const perusahaanCards = document.querySelectorAll(".company-card");
 
-  const lokasiToggle = document.querySelector('.lokasi-toggle');
-  const lokasiOptions = document.querySelector('.lokasi-options');
-  const lokasiArrow = document.querySelector('.lokasi-arrow');
-  const lokasiButtons = document.querySelectorAll('.lokasi-btn');
+  function applyCompanyFilters() {
+    const selectedKategori = kategoriFilter.value;
+    const selectedLokasi = lokasiFilter.value;
 
-  const companyCards = document.querySelectorAll('.company-card');
+    perusahaanCards.forEach(card => {
+      const cardKategori = card.getAttribute("data-kategori");
+      const cardLokasi = card.getAttribute("data-lokasi");
 
-  let currentKategori = "all";
-  let currentLokasi = "all";
+      const matchKategori = selectedKategori === "all" || cardKategori === selectedKategori;
+      const matchLokasi = selectedLokasi === "all" || cardLokasi === selectedLokasi;
 
-  function applyFilters() {
-    companyCards.forEach(card => {
-      const category = card.getAttribute('data-kategori');
-      const lokasi = card.getAttribute('data-lokasi');
-
-      const showByKategori = currentKategori === "all" || category === currentKategori;
-      const showByLokasi = currentLokasi === "all" || lokasi === currentLokasi;
-
-      card.style.display = (showByKategori && showByLokasi) ? 'block' : 'none';
+      if (matchKategori && matchLokasi) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
     });
   }
 
-  // Toggle dropdown kategori
-  kategoriToggle.addEventListener('click', () => {
-    const isVisible = kategoriOptions.style.display === 'block';
-    kategoriOptions.style.display = isVisible ? 'none' : 'block';
-    kategoriArrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
-  });
-
-  // Toggle dropdown lokasi
-  lokasiToggle.addEventListener('click', () => {
-    const isVisible = lokasiOptions.style.display === 'block';
-    lokasiOptions.style.display = isVisible ? 'none' : 'block';
-    lokasiArrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
-  });
-
-  // Klik tombol kategori
-  kategoriButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentKategori = btn.getAttribute('data-kategori');
-      kategoriToggle.childNodes[0].textContent = btn.textContent;
-      applyFilters();
-      kategoriOptions.style.display = 'none';
-      kategoriArrow.style.transform = 'rotate(0deg)';
-    });
-  });
-
-  // Klik tombol lokasi
-  lokasiButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentLokasi = btn.getAttribute('data-lokasi');
-      lokasiToggle.childNodes[0].textContent = btn.textContent;
-      applyFilters();
-      lokasiOptions.style.display = 'none';
-      lokasiArrow.style.transform = 'rotate(0deg)';
-    });
-  });
-
-  // Tutup dropdown jika klik di luar
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.kategori-dropdown')) {
-      kategoriOptions.style.display = 'none';
-      kategoriArrow.style.transform = 'rotate(0deg)';
-    }
-
-    if (!e.target.closest('.lokasi-dropdown')) {
-      lokasiOptions.style.display = 'none';
-      lokasiArrow.style.transform = 'rotate(0deg)';
-    }
-  });
+  kategoriFilter.addEventListener("change", applyCompanyFilters);
+  lokasiFilter.addEventListener("change", applyCompanyFilters);
 </script>
 
 </body>
