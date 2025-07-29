@@ -1,132 +1,236 @@
-/* Reset dasar */ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  background-color: #f6f9fc;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.main-container {
+  display: flex;
+  min-height: 100vh;
+}
 /* Sidebar */
 .sidebar {
-  width: 200px;
-  background: #2c3e50;
-  min-height: 100vh;
-  padding: 20px 10px;
+  width: 120px;
+  padding-top: 35px; /* beri ruang di atas untuk logo */
   position: fixed;
   top: 0;
-  left: 0;
-  color: #fff;
+  left: -250px; /* awalnya tersembunyi */
+  height: 100%;
+  background-color: #0a1d56;
+  transition: left 0.3s ease;
+  z-index: 998;
 }
+
+.sidebar.active {
+  left: 0;
+  color: #ffcb05;
+}
+
+.sidebar .logo {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #f94f4f;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .menu li {
+  margin: 10px 0;
+}
+
+.sidebar .menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.sidebar .menu li a:hover {
+  background-color: #1a2b6d;
+}
+
+.sidebar .menu li a.active {
+  background-color: #0d1b44;
+  color: yellow;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0d1b44;
+}
+
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
+  cursor: pointer;
+  color: white;
+}
+.logo span {
+  color: #ff0066;
 }
 
 .menu {
   list-style: none;
 }
-
 .menu li {
-  margin: 12px 0;
+  margin: 18px 0;
 }
-
 .menu a {
-  color: #fff;
   text-decoration: none;
-  font-size: 16px;
-  display: block;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.2s;
+  color: white;
+  font-weight: 500;
 }
-
-.menu a:hover,
-.menu a.active {
-  background: #34495e;
-  color: #ffcc00;
-}
-
-/* Main content */
-.main-content {
-  margin-left: 220px;
-  padding: 20px;
-  flex: 1;
+.menu a.active,
+.menu a:hover {
+  color: #ffcb05;
 }
 
 /* Header */
 .header {
-  background: #0047ab;
-  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #1e3163, #8e44ad);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* kamu bisa sesuaikan jika butuh */
+  z-index: 999; /* agar tampil di atas elemen lain */
+}
+
+.search-bar {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  display: block;
+}
+
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.username {
+  font-weight: bold;
+}
+.notif-bell {
+  font-size: 20px;
+}
+
+/* Konten Utama */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  padding: 100px 40px 20px; /* 100px di atas sebagai ruang untuk header */
+}
+
+/* Company Header */
+/* ... bagian atas tetap sama ... */
+
+/* Job Header */
+.job-header {
+  background-color: #103a73;
+  color: white;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   margin-bottom: 20px;
 }
-
-.header h1 {
-  font-size: 28px;
+.job-header h2 {
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.header p {
-  color: #ffcc00;
-  margin-top: 8px;
-}
-
-/* Search & Filter */
-.search-filter {
+/* Job Card Wrapper */
+.job-card-wrapper {
+  background-color: #163b6c;
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
   display: flex;
+  gap: 30px;
   flex-wrap: wrap;
-  gap: 10px;
+}
+
+.job-logo {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  background: white;
+  padding: 10px;
+}
+
+.job-info {
+  flex: 1;
+}
+
+.job-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.job-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.job-details {
+  list-style: none;
   margin-bottom: 20px;
-  align-items: center;
-  justify-content: space-between;
+}
+.job-details li {
+  margin-bottom: 5px;
 }
 
-.search-wrap {
-  flex: 1;
-  display: flex;
-  max-width: 400px;
+/* Back button tetap */
+.back {
+  display: inline-block;
+  margin-top: 30px;
+  color: #ffcb05;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.search-wrap input {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px 0 0 6px;
-  font-size: 14px;
+.back:hover {
+  text-decoration: underline;
 }
 
-.search-wrap button {
-  padding: 8px 16px;
-  border: none;
-  background: #0047ab;
-  color: #fff;
-  border-radius: 0 6px 6px 0;
-  cursor: pointer;
-}
-
-.filters select {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-}
-
-/* Job Cards */
+/* Cards Grid */
 .jobs-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
 }
 
+/* Job Card */
 .job-card {
   background: #fff;
   border-radius: 10px;
@@ -163,36 +267,37 @@ body {
   margin-top: 12px;
 }
 
-.type {
-  background: #e0e0e0;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  color: #333;
+/* ... bagian bawah tetap sama ... */
+
+/* Responsive untuk job grid */
+@media (max-width: 1024px) {
+  .job-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.apply-btn {
-  padding: 6px 12px;
-  border: none;
-  background: #ffcc00;
-  color: #163c7d;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.2s;
+@media (max-width: 600px) {
+  .job-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.apply-btn:hover {
-  background: #e6b800;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-  .search-filter {
-    flex-direction: column;
-    align-items: stretch;
+  .main-content {
+    margin-left: 0;
   }
 
-  .filters select {
-    width: 100%;
+  .job-container {
+    grid-template-columns: 1fr;
   }
+}
+
+/* Footer */
+.footer {
+  background-color: #0d255a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  border-top: 2px solid #ffcb05;
 }
