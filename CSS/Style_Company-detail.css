@@ -17,19 +17,65 @@ body, html {
 }
 /* Sidebar */
 .sidebar {
-  width: 220px;
-  background-color: #0d255a;
-  color: white;
-  padding: 20px;
-  position: sticky;
+  width: 120px;
+  padding-top: 35px; /* beri ruang di atas untuk logo */
+  position: fixed;
   top: 0;
-  height: 100vh;
+  left: -250px; /* awalnya tersembunyi */
+  height: 100%;
+  background-color: #0a1d56;
+  transition: left 0.3s ease;
+  z-index: 998;
 }
 
-.logo {
-  font-size: 22px;
+.sidebar.active {
+  left: 0;
+  color: #ffcb05;
+}
+
+.sidebar .logo {
+  text-align: center;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  color: #f94f4f;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .menu li {
+  margin: 10px 0;
+}
+
+.sidebar .menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.sidebar .menu li a:hover {
+  background-color: #1a2b6d;
+}
+
+.sidebar .menu li a.active {
+  background-color: #0d1b44;
+  color: yellow;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0d1b44;
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
 }
 .logo span {
   color: #ff0066;
@@ -59,15 +105,26 @@ body, html {
   padding: 15px 30px;
   background: linear-gradient(to right, #1e3163, #8e44ad);
   color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* kamu bisa sesuaikan jika butuh */
+  z-index: 999; /* agar tampil di atas elemen lain */
 }
 
 .search-bar {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
   padding: 10px 20px;
   border-radius: 25px;
   border: none;
-  width: 400px;
+  outline: none;
   font-size: 16px;
+  display: block;
 }
+
 
 .user-area {
   display: flex;
@@ -92,7 +149,7 @@ body, html {
 
 .content-wrapper {
   flex-grow: 1;
-  padding: 20px 40px;
+  padding: 100px 40px 20px; /* 100px di atas sebagai ruang untuk header */
 }
 
 /* Company Header */
@@ -167,6 +224,18 @@ body, html {
 .job-list li {
   margin-bottom: 6px;
   color: white;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 30px;
+  color: #ffcb05;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back:hover {
+  text-decoration: underline;
 }
 
 /* Footer */

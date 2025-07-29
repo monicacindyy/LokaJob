@@ -1,0 +1,81 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      background-color: #f0f4ff;
+    }
+    .sidebar {
+      width: 130px;
+      background-color: #153A73;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+    }
+    .sidebar .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 40px;
+    }
+    .sidebar .logo span {
+      color: #FF0066;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar ul li {
+      margin: 20px 0;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .sidebar ul li.active {
+      color: gold;
+      font-weight: bold;
+    }
+    .main-content {
+      flex: 1;
+    }
+    .header {
+      background: linear-gradient(to right, #284377, #c37cc3);
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .search-bar {
+      flex: 1;
+      margin: 0 30px;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .username {
+      color: white;
+      font-weight: bold;
+    }
+    .notification {
+      background-color: gold;
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .content-wrapper {
+      padding: 20px 40px;
+    }

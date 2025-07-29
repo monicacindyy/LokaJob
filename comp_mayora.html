@@ -22,6 +22,7 @@
 
   <div class="main-content">
     <header class="header">
+        <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
       <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
       <div class="user-area">
         <span class="username">Username</span>
@@ -36,22 +37,19 @@
       </div>
 
       <div class="company-card">
-        <img src="IMAGES/Sari Rotijpg.jpg" alt="Logo Sari Roti" class="company-logo" />
+        <img src="IMAGES/Mayora.png" alt="Logo Sari Roti" class="company-logo" />
         <div class="company-info">
-          <h3>PT Nippon Indosari Corpindo Tbk (ROTI)</h3>
+          <h3>PT Mayora Indah Tbk (MYOR)</h3>
           <p>
-            Dikenal sebagai produsen roti "Sari Roti", perusahaan ini fokus pada produk roti dan makanan panggang. 
-            Mereka berkomitmen untuk menyediakan produk berkualitas tinggi dengan rasa yang lezat dan tekstur yang sempurna. 
-            Dengan memanfaatkan teknologi canggih dan bahan-bahan pilihan, Sari Roti terus berinovasi untuk memenuhi selera konsumen yang beragam. 
-            Selain roti tawar dan roti manis, mereka juga menawarkan berbagai pilihan pastry dan kue yang cocok untuk berbagai kesempatan. 
-            Kualitas dan kepuasan pelanggan selalu menjadi prioritas utama, menjadikan Sari Roti sebagai merek tepercaya di seluruh Indonesia.
+           Dikenal sebagai salah satu produsen makanan dan minuman terbesar di Indonesia, PT Mayora Indah Tbk memproduksi berbagai merek populer seperti Kopiko, Torabika, Roma, Energen, Beng-Beng, dan Le Minerale. Perusahaan ini berkomitmen menghadirkan produk berkualitas tinggi yang inovatif, lezat, dan memenuhi standar internasional.
+           Dengan pengalaman lebih dari 45 tahun dan distribusi ke lebih dari 90 negara, Mayora telah menjadi pelopor industri FMCG yang tak hanya unggul di pasar domestik, tetapi juga di panggung global. Fokus utama perusahaan adalah kepuasan pelanggan, inovasi produk, dan kesinambungan bisnis.
           </p>
           <ul class="company-details">
             <li>📍 Lokasi: Jakarta, Indonesia</li>
-            <li>🏛️ Tahun Berdiri: 1995</li>
-            <li>👥 Jumlah Karyawan: 3.000+</li>
+            <li>🏛️ Tahun Berdiri: 1977</li>
+            <li>👥 Jumlah Karyawan: 10.000+</li>
             <li>🧺 Industri: Makanan & Minuman</li>
-            <li>🌐 Website: <a href="https://www.sariroti.com" target="_blank">www.sariroti.com</a></li>
+            <li>🌐 Website: <a href="https://www.mayoraindah.co.id" target="_blank">www.sariroti.com</a></li>
           </ul>
 
           <div class="job-list">
@@ -60,9 +58,22 @@
               <li>• Staff Produksi</li>
               <li>• Quality Control</li>
               <li>• Sales Marketing</li>
-              <li>• Teknisi Mesin</li>
+              <li>• Teknisi Maintenance</li>
+              <li>• R&D (Research & Development)</li>
             </ul>
           </div>
+          <a class="back" href="#" onclick=
+          "if (document.referrer) 
+          {
+            window.history.back(); 
+          }
+          else
+          {
+            window.location.href='index.html';
+            }">
+        &larr; Kembali ke halaman sebelumnya
+        </a>
+
         </div>
       </div>
     </div>
@@ -72,5 +83,12 @@
     </footer>
   </div>
   </div>
+  <script>
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
