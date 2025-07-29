@@ -1,88 +1,254 @@
-/* Reset */ 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  background-color: #f4f7fb;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.main-container {
+  display: flex;
+  min-height: 100vh;
+}
 /* Sidebar */
 .sidebar {
-  width: 200px;
-  background: #2c3e50;
-  min-height: 100vh;
-  padding: 20px 10px;
+  width: 120px;
+  padding-top: 35px; /* beri ruang di atas untuk logo */
   position: fixed;
   top: 0;
-  left: 0;
-  color: #fff;
+  left: -250px; /* awalnya tersembunyi */
+  height: 100%;
+  background-color: #0a1d56;
+  transition: left 0.3s ease;
+  z-index: 998;
 }
+
+.sidebar.active {
+  left: 0;
+  color: #ffcb05;
+}
+
+.sidebar .logo {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #f94f4f;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .menu li {
+  margin: 10px 0;
+}
+
+.sidebar .menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.sidebar .menu li a:hover {
+  background-color: #1a2b6d;
+}
+
+.sidebar .menu li a.active {
+  background-color: #0d1b44;
+  color: yellow;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0d1b44;
+}
+
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
+  cursor: pointer;
+  color: white;
+}
+.logo span {
+  color: #ff0066;
 }
 
 .menu {
   list-style: none;
 }
-
 .menu li {
-  margin: 12px 0;
+  margin: 18px 0;
 }
-
 .menu a {
-  color: #fff;
   text-decoration: none;
-  font-size: 16px;
-  display: block;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.2s;
+  color: white;
+  font-weight: 500;
 }
-
-.menu a:hover,
-.menu a.active {
-  background: #34495e;
-  color: #ffcc00;
-}
-
-/* Main content */
-.main-content {
-  margin-left: 220px;
-  padding: 20px;
-  flex: 1;
+.menu a.active,
+.menu a:hover {
+  color: #ffcb05;
 }
 
 /* Header */
 .header {
-  background: #0047ab;
-  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #1e3163, #8e44ad);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* kamu bisa sesuaikan jika butuh */
+  z-index: 999; /* agar tampil di atas elemen lain */
+}
+
+.search-bar {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  display: block;
+}
+
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.username {
+  font-weight: bold;
+}
+.notif-bell {
+  font-size: 20px;
+}
+
+/* Konten Utama */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  flex-grow: 1;
+  padding: 100px 40px 20px; /* 100px di atas sebagai ruang untuk header */
+}
+
+/* Company Header */
+.company-header {
+  background-color: #103a73;
+  color: white;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   margin-bottom: 20px;
 }
-
-.header p {
-  color: #ffcc00;
-  margin-top: 8px;
+.company-header h2 {
+  font-size: 24px;
+  font-weight: bold;
 }
 
+/* Company Card */
+.company-card {
+  background-color: #163b6c;
+  color: white;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.company-logo {
+  width: 200px;
+  height: auto;
+  border-radius: 12px;
+  background: white;
+  padding: 10px;
+}
+
+.company-info {
+  flex: 1;
+}
+
+.company-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.company-info p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.company-details {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.company-details li {
+  margin-bottom: 5px;
+}
+
+/* Job List */
+.job-list {
+  background-color: #637ef0;
+  padding: 15px 20px;
+  border-radius: 12px;
+}
+.job-list h4 {
+  color: #ffcb05;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.job-list ul {
+  list-style: none;
+}
+.job-list li {
+  margin-bottom: 6px;
+  color: white;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 30px;
+  color: #ffcb05;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+/* Sudah termasuk bagian sidebar dan header di atas */
 /* Company Cards */
+/* Container Grid */
 .company-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 24px;
+  margin: 40px 0;
 }
 
+/* Kartu Perusahaan */
 .company-card {
   background: #fff;
   padding: 16px;
@@ -97,6 +263,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
 .company-logo {
   width: 60px;
   height: 60px;
@@ -104,18 +271,21 @@ body {
   margin-bottom: 10px;
 }
 
+/* Nama Perusahaan */
 .company-card h3 {
   font-size: 18px;
   color: #163c7d;
   margin-bottom: 8px;
 }
 
+/* Deskripsi Singkat */
 .company-card p {
   font-size: 14px;
   color: #555;
   margin-bottom: 10px;
 }
 
+/* Lokasi */
 .location {
   font-size: 13px;
   color: #777;
@@ -123,6 +293,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* Tombol */
 .detail-btn {
   display: inline-block;
   padding: 6px 12px;
@@ -135,5 +306,60 @@ body {
 }
 
 .detail-btn:hover {
-  background: #003380;
+  background-color: #003380;
+}
+
+@media (max-width: 1024px) {
+  .company-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* FILTER */
+.company-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+  
+}
+
+.company-filter select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  min-width: 200px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .company-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Footer */
+.footer {
+  background-color: #0d255a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  border-top: 2px solid #ffcb05;
 }

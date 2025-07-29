@@ -2,46 +2,14 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Perusahaan - LokaJob</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Perusahaan - Sari Roti</title>
   <link rel="stylesheet" href="CSS/Style_Company.css">
-
-  <!-- Tambahan CSS untuk modal -->
-  <style>
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-    }
-    .modal-content {
-      background: #fff;
-      margin: 8% auto;
-      padding: 20px;
-      width: 450px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      animation: fadeIn 0.3s;
-    }
-    .close {
-      float: right;
-      font-size: 24px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    @keyframes fadeIn {
-      from {opacity:0; transform: translateY(-20px);}
-      to {opacity:1; transform: translateY(0);}
-    }
-  </style>
 </head>
 <body>
-
+<div class="main-container">
   <div class="sidebar">
-    <h2 class="logo">LokaJob</h2>
+    <div class="logo">Loka<span>Job</span></div>
     <ul class="menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="Company.html" class="active">Company</a></li>
@@ -53,83 +21,104 @@
   </div>
 
   <div class="main-content">
-    <div class="header">
-      <h1>Company</h1>
-      <p>Discover Top Campanies currently Hiring</p>
-    </div>
+    <header class="header">
+        <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
+      <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
+      <div class="user-area">
+        <span class="username">Username</span>
+        <span class="notif-bell">🔔</span>
+      </div>
+    </header>
 
-    <div class="company-grid">
-      <!-- PT Maju Jaya -->
-      <div class="company-card fade-in">
-        <img src="IMAGES/logo.png" alt="Logo PT Maju Jaya" class="company-logo">
-        <h3>PT Maju Jaya</h3>
-        <p>Perusahaan IT yang bergerak di bidang software development, khususnya pengembangan aplikasi mobile dan web untuk mendukung transformasi digital bisnis.</p>
-  <p>An IT company specializing in software development, focusing on mobile and web applications to support business digital transformation.</p>
-</p>
+    <div class="content-wrapper">
+      <div class="company-header">
+        <h2>Company</h2>
+        <p>Temukan Company terbaik yang membuka lowongan kerja</p>
+      </div>
+
+    <section class="company-filter">
+    <select id="kategoriFilter">
+        <option value="all">Semua Kategori</option>
+        <option value="pertanian">Pertanian</option>
+        <option value="makanan">Makanan & Minuman</option>
+        <option value="kesehatan">Kesehatan</option>
+    </select>
+
+    <select id="lokasiFilter">
+        <option value="all">Semua Lokasi</option>
+        <option value="jakarta">Jakarta</option>
+        <option value="bandung">Bandung</option>
+        <option value="semarang">Semarang</option>
+    </select>
+    </section>
+        <div class="company-grid">
+        <!-- PT Nippon Indosari Corpindo Tbk -->
+        <div class="company-card fade-in">
+            <h3>PT Nippon Indosari Corpindo Tbk</h3>
+        <img src="IMAGES/Sari Rotijpg.jpg" alt="Logo Sari Roti" class="company-logo">
+        
+        <p>Produsen roti merek 'Sari Roti' yang memimpin pasar dengan jaringan distribusi luas di Indonesia.</p>
+        <span class="location">Bekasi</span>
+        <a href="comp_sari-roti.html" class="detail-btn">Lihat Perusahaan</a>
+        </div>
+
+        <!-- PT Mayora Indah Tbk -->
+        <div class="company-card fade-in">
+        <h3>PT Mayora Indah Tbk</h3>  
+            <img src="IMAGES/Mayora.png" alt="Logo Mayora" class="company-logo">
+        
+        <p>Perusahaan FMCG ternama yang memproduksi makanan dan minuman seperti Kopiko, Beng-Beng, dan Torabika.</p>
+        <span class="location">Tangerang</span>
+        <a href="comp_mayora.html" class="detail-btn">Lihat Perusahaan</a>
+        </div>
+
+        <!-- PT Indofood Sukses Makmur Tbk -->
+        <div class="company-card fade-in">
+        <img src="IMAGES/indofood.png" alt="Logo Indofood" class="company-logo">
+        <h3>PT Indofood Sukses Makmur Tbk</h3>
+        <p>Salah satu produsen makanan terbesar di Indonesia, dikenal luas dengan produk mi instan Indomie.</p>
         <span class="location">Jakarta</span>
-        <a href="#" class="detail-btn" onclick="openModal(
-             'PT Maju Jaya', 
-             'Software Engineer<br>Male/Female<br>with Education background in:<br>D4/S1 Teknik Informatika<br>D4/S1 Sistem Informasi<br>D4/S1 Teknologi Informasi<br>Gaji: Rp8.000.000 - Rp12.000.000<br> Join our team to develop web and mobile-based applications that drive digital transformation for businesses')">
-          view vacancies
-        </a>
-      </div>
-
-      
-      <div class="company-card fade-in">
-        <img src="IMAGES/indofood.jpg" alt="Logo PT indofood" class="company-logo">
-        <h3>CV Sukses Makmur</h3>
-        <p>A snack food manufacturer with an active presence in the international markets/ export market.</p>
-        <p>The company adheres to global food safety standards,Offering high-quality, ready-to-eat products, tailors its offerings to local tastes, and continuously innovates to strengthen its position in the global snack industry.</p>
-        <span class="location">Bandung</span>
-        <a href="#" class="detail-btn" onclick="openModal(
-             'CV Sukses Makmur', 
-             'Marketing Executive<br>Female<br>with Education background in :<br>D3 Manajemen <br> S1 Ilmu Komunikasi<br>D4/S1 Manajemen Bisnis<br>Gaji: Rp3.000.000 - Rp7.000.000<br> Assist in the marketing strategy of snack products to local and export markets.')">
-          View vacancies
-        </a>
-      </div>
-
-      <!-- StartupIn -->
-      <div class="company-card fade-in">
-        <img src="IMAGES/jd - id.png" alt="Logo PT JD.ID" class="company-logo">
-        <h3>StartupIn</h3>
-        <p> Startup teknologi yang mengembangkan platform berbasis AI untuk pendidikan dan pelatihan online yang interaktif dan personal.</p>
-  <p>A tech startup building smart, personalized solutions for interactive online education and training, designed to improve engagement, adapt to individual learning needs, and deliver measurable outcomes.</p>
-  
-        <span class="location">Yogyakarta</span>
-        <a href="#" class="detail-btn" onclick="openModal(
-             'StartupIn', 
-             'UI/UX Designer<br>Male/Female<br>with Education background in:<br>D4/S1 Teknik Informatika<br>D4/S1 Sistem Informasi<br>D4/S1 Teknologi Informasi<br>D4/S1 Ilmu Komputer<br>D4/S1 Teknik Komputer<br>Gaji: Rp7.000.000 - Rp10.000.000<br>Designing the interface of an AI-based educational application to be easy to use.')">
-          View vacancies
-        </a>
-      </div>
-    </div>
+        <a href="Detail_Indofood.html" class="detail-btn">Lihat Perusahaan</a>
+        </div>
+     </div>
   </div>
+    <footer class="footer">
+    <p>&copy; 2025 LokaJob. All rights reserved.</p>
+    </footer>
+</div>
+<script>
+  // Sidebar toggle
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+  }
 
-  <!-- ✅ Modal Popup untuk Detail Lowongan -->
-  <div id="funding opportunity" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="modalTitle"> Vacancy Details</h2>
-      <p id="modalContent"></p>
-    </div>
-  </div>
+  // ==== FILTER ELEMENT ====
+  const kategoriFilter = document.getElementById("kategoriFilter");
+  const lokasiFilter = document.getElementById("lokasiFilter");
+  const perusahaanCards = document.querySelectorAll(".company-card");
 
-  <script>
-    function openModal(companyName, content) {
-      document.getElementById("modalTitle").innerText = "job vacancy " + companyName
-      document.getElementById("modalContent").innerHTML = content;
-      document.getElementById("funding opportunity").style.display = "block";
-    }
-    function closeModal() {
-      document.getElementById("funding opportunity").style.display = "none";
-    }
-    window.onclick = function(event) {
-      const modal = document.getElementById("funding opportunity");
-      if (event.target === modal) {
-        closeModal();
+  function applyCompanyFilters() {
+    const selectedKategori = kategoriFilter.value;
+    const selectedLokasi = lokasiFilter.value;
+
+    perusahaanCards.forEach(card => {
+      const cardKategori = card.getAttribute("data-kategori");
+      const cardLokasi = card.getAttribute("data-lokasi");
+
+      const matchKategori = selectedKategori === "all" || cardKategori === selectedKategori;
+      const matchLokasi = selectedLokasi === "all" || cardLokasi === selectedLokasi;
+
+      if (matchKategori && matchLokasi) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
       }
-    }
-  </script>
+    });
+  }
 
+  kategoriFilter.addEventListener("change", applyCompanyFilters);
+  lokasiFilter.addEventListener("change", applyCompanyFilters);
+</script>
 </body>
 </html>
