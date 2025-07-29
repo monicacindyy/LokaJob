@@ -22,6 +22,7 @@
 
   <div class="main-content">
     <header class="header">
+        <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
       <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
       <div class="user-area">
         <span class="username">Username</span>
@@ -40,10 +41,10 @@
         <div class="company-info">
           <h3>PT Nippon Indosari Corpindo Tbk (ROTI)</h3>
           <p>
-            Dikenal sebagai produsen roti "Sari Roti", perusahaan ini fokus pada produk roti dan makanan panggang. 
-            Mereka berkomitmen untuk menyediakan produk berkualitas tinggi dengan rasa yang lezat dan tekstur yang sempurna. 
-            Dengan memanfaatkan teknologi canggih dan bahan-bahan pilihan, Sari Roti terus berinovasi untuk memenuhi selera konsumen yang beragam. 
-            Selain roti tawar dan roti manis, mereka juga menawarkan berbagai pilihan pastry dan kue yang cocok untuk berbagai kesempatan. 
+            Dikenal sebagai produsen roti "Sari Roti", perusahaan ini fokus pada produk roti dan makanan panggang.
+            Mereka berkomitmen untuk menyediakan produk berkualitas tinggi dengan rasa yang lezat dan tekstur yang sempurna.
+            Dengan memanfaatkan teknologi canggih dan bahan-bahan pilihan, Sari Roti terus berinovasi untuk memenuhi selera konsumen yang beragam.
+            Selain roti tawar dan roti manis, mereka juga menawarkan berbagai pilihan pastry dan kue yang cocok untuk berbagai kesempatan.
             Kualitas dan kepuasan pelanggan selalu menjadi prioritas utama, menjadikan Sari Roti sebagai merek tepercaya di seluruh Indonesia.
           </p>
           <ul class="company-details">
@@ -63,6 +64,18 @@
               <li>• Teknisi Mesin</li>
             </ul>
           </div>
+          <a class="back" href="#" onclick=
+          "if (document.referrer) 
+          {
+            window.history.back(); 
+          }
+          else
+          {
+            window.location.href='index.html';
+            }">
+        &larr; Kembali ke halaman sebelumnya
+        </a>
+
         </div>
       </div>
     </div>
@@ -72,5 +85,12 @@
     </footer>
   </div>
   </div>
+  <script>
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>

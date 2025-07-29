@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Perusahaan - Sari Roti</title>
+  <link rel="stylesheet" href="CSS/Style_Company-detail.css">
+</head>
+<body>
+<div class="main-container">
+  <div class="sidebar">
+    <div class="logo">Loka<span>Job</span></div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Company.html" class="active">Company</a></li>
+      <li><a href="Jobsite.html">Job</a></li>
+      <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <header class="header">
+        <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
+      <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
+      <div class="user-area">
+        <span class="username">Username</span>
+        <span class="notif-bell">🔔</span>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <div class="company-header">
+        <h2>Company</h2>
+        <p>Temukan Company terbaik yang membuka lowongan kerja</p>
+      </div>
+
+<div class="filter-wrapper">
+<div class="filter-dropdown kategori-dropdown">
+  <button class="kategori-toggle">Pilih Kategori <span class="kategori-arrow">▾</span></button>
+<div class="kategori-options">
+  <button class="kategori-btn" data-kategori="all">Semua</button>
+  <button class="kategori-btn" data-kategori="pertanian">Pertanian</button>
+  <button class="kategori-btn" data-kategori="makanan">Makanan & Minuman</button>
+  <button class="kategori-btn" data-kategori="kesehatan">Kesehatan</button>
+</div>
+</div>
+
+
+<div class="filter-dropdown lokasi-dropdown">
+  <button class="lokasi-toggle">Pilih Lokasi <span class="lokasi-arrow">▾</span></button>
+  <div class="lokasi-options">
+    <button class="lokasi-btn" data-lokasi="all">Semua</button>
+    <button class="lokasi-btn" data-lokasi="jakarta">Jakarta</button>
+    <button class="lokasi-btn" data-lokasi="bandung">Bandung</button>
+    <button class="lokasi-btn" data-lokasi="semarang">Semarang</button>
+    <!-- tambah sesuai data -->
+  </div>
+</div>
+
+
+<div class="company-container">
+<div class="company-card" data-kategori="pertanian" data-lokasi="semarang">
+  <h3>PT Tani Subur</h3>
+  <p>Bidang: Pertanian | Lokasi: Semarang</p>
+</div>
+
+<div class="company-card" data-kategori="makanan" data-lokasi="jakarta">
+  <h3>PT Makan Lezat</h3>
+  <p>Bidang: Makanan | Lokasi: Jakarta</p>
+</div>
+
+<div class="company-card" data-kategori="kesehatan" data-lokasi="surabaya">
+  <h3>PT Sehat Sentosa</h3>
+  <p>Bidang: Kesehatan | Lokasi: Surabaya</p>
+</div>
+
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 LokaJob. All rights reserved.</p>
+    </footer>
+  </div>
+  </div>
+<script>
+  // Sidebar toggle
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+  }
+
+  // ==== FILTER ELEMENT ====
+  const kategoriToggle = document.querySelector('.kategori-toggle');
+  const kategoriOptions = document.querySelector('.kategori-options');
+  const kategoriArrow = document.querySelector('.kategori-arrow');
+  const kategoriButtons = document.querySelectorAll('.kategori-btn');
+
+  const lokasiToggle = document.querySelector('.lokasi-toggle');
+  const lokasiOptions = document.querySelector('.lokasi-options');
+  const lokasiArrow = document.querySelector('.lokasi-arrow');
+  const lokasiButtons = document.querySelectorAll('.lokasi-btn');
+
+  const companyCards = document.querySelectorAll('.company-card');
+
+  let currentKategori = "all";
+  let currentLokasi = "all";
+
+  function applyFilters() {
+    companyCards.forEach(card => {
+      const category = card.getAttribute('data-kategori');
+      const lokasi = card.getAttribute('data-lokasi');
+
+      const showByKategori = currentKategori === "all" || category === currentKategori;
+      const showByLokasi = currentLokasi === "all" || lokasi === currentLokasi;
+
+      card.style.display = (showByKategori && showByLokasi) ? 'block' : 'none';
+    });
+  }
+
+  // Toggle dropdown kategori
+  kategoriToggle.addEventListener('click', () => {
+    const isVisible = kategoriOptions.style.display === 'block';
+    kategoriOptions.style.display = isVisible ? 'none' : 'block';
+    kategoriArrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+  });
+
+  // Toggle dropdown lokasi
+  lokasiToggle.addEventListener('click', () => {
+    const isVisible = lokasiOptions.style.display === 'block';
+    lokasiOptions.style.display = isVisible ? 'none' : 'block';
+    lokasiArrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+  });
+
+  // Klik tombol kategori
+  kategoriButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentKategori = btn.getAttribute('data-kategori');
+      kategoriToggle.childNodes[0].textContent = btn.textContent;
+      applyFilters();
+      kategoriOptions.style.display = 'none';
+      kategoriArrow.style.transform = 'rotate(0deg)';
+    });
+  });
+
+  // Klik tombol lokasi
+  lokasiButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLokasi = btn.getAttribute('data-lokasi');
+      lokasiToggle.childNodes[0].textContent = btn.textContent;
+      applyFilters();
+      lokasiOptions.style.display = 'none';
+      lokasiArrow.style.transform = 'rotate(0deg)';
+    });
+  });
+
+  // Tutup dropdown jika klik di luar
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.kategori-dropdown')) {
+      kategoriOptions.style.display = 'none';
+      kategoriArrow.style.transform = 'rotate(0deg)';
+    }
+
+    if (!e.target.closest('.lokasi-dropdown')) {
+      lokasiOptions.style.display = 'none';
+      lokasiArrow.style.transform = 'rotate(0deg)';
+    }
+  });
+</script>
+
+</body>
+</html>
