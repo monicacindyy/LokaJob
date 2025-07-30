@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <title>Beranda - LokaJob</title>
-  <link rel="stylesheet" href="CSS/Style_IndexHome.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocaJob - Home</title>
+  <link rel="stylesheet" href="CSS/Style_IndexHome.css">
 </head>
 <body>
-  <div class="layout">
+<div class="main-container">
   <div class="sidebar">
-    <div class="logo">LokaJob</div>
+    <div class="logo">Loka<span>Job</span></div>
     <ul class="menu">
-      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
       <li><a href="Company.html">Company</a></li>
       <li><a href="Jobsite.html">Job</a></li>
       <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
@@ -18,140 +19,152 @@
       <li><a href="about.html">About Us</a></li>
     </ul>
   </div>
-  </div>
 
-  <div class="main-content">
-    <div class="header">
-      <h1>Selamat Datang di LokaJob</h1>
-      <p>Temukan pekerjaan impianmu di sini!</p>
-   </div>
+<div class="main-content">
+  <header class="header">
+    <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
+    <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
+    <div class="user-area">
+      <span class="username">Username</span>
+      <span class="notif-bell">🔔</span>
+    </div>
+  </header>
 
-<div class="search-bar">
-  <input type="text" id="searchInput" placeholder="Cari Lowongan Pekerjaan...">
-  <button onclick="searchJob()">Search</button>
-</div>
+  <div class="content-wrapper">
+    
+    <!-- Header Selamat Datang -->
+    <div class="company-header">
+      <h2>Selamat datang di LocaJob</h2>
+      <p>Temukan Pekerjaan yang anda impikan!!!</p>
+    </div>
 
-    <div class="filter-wrapper">
-      <div class="category-buttons">
-        <button data-filter="IT" class="filter-btn">IT</button>
-        <button data-filter="Finance" class="filter-btn">Finance</button>
-        <button data-filter="Marketing" class="filter-btn">Marketing</button>
-        <button data-filter="Desain" class="filter-btn">Desain</button>
-        <button data-filter="Kesehatan" class="filter-btn">Kesehatan</button>
-        <button data-filter="Pendidikan" class="filter-btn">Pendidikan</button>
-        <button data-filter="Teknik" class="filter-btn">Teknik</button>
-        <button data-filter="Logistik" class="filter-btn">Logistik</button>
-        <button data-filter="Hukum" class="filter-btn">Hukum</button>
-        <button data-filter="Lainnya" class="filter-btn">Lainnya</button>
+    <!-- Judul Perusahaan -->
+    <div class="section-title">
+      <h2>Perusahaan</h2>
+    </div>
+
+    <!-- Grid Daftar Perusahaan -->
+    <div class="company-grid">
+      <!-- 1 -->
+      <div class="company-card">
+        <h3>PT Nippon Indosari Corpindo Tbk</h3>
+        <img src="IMAGES/Sari Rotijpg.jpg" alt="Logo Sari Roti" class="company-logo">
+        <p>Produsen roti merek 'Sari Roti' yang memimpin pasar dengan jaringan distribusi luas di Indonesia.</p>
+        <span class="location">Bekasi</span>
+        <a href="comp_sari-roti.html" class="detail-btn">Lihat Perusahaan</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="company-card">
+        <h3>PT Mayora Indah Tbk</h3>  
+        <img src="IMAGES/Mayora.png" alt="Logo Mayora" class="company-logo">
+        <p>Perusahaan FMCG ternama yang memproduksi makanan dan minuman seperti Kopiko, Beng-Beng, dan Torabika.</p>
+        <span class="location">Tangerang</span>
+        <a href="comp_mayora.html" class="detail-btn">Lihat Perusahaan</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="company-card">
+        <h3>PT Indofood Sukses Makmur Tbk</h3>
+        <img src="IMAGES/indofood.png" alt="Logo Indofood" class="company-logo">
+        <p>Salah satu produsen makanan terbesar di Indonesia, dikenal luas dengan produk mi instan Indomie.</p>
+        <span class="location">Cikarang</span>
+        <a href="Detail_Indofood.html" class="detail-btn">Lihat Perusahaan</a>
       </div>
     </div>
 
-  <div class="job-content">
-  <a href="job_dokter-gigi.html" class="job-link">
-  <div class="job-card" data-kategori="Kesehatan">
-    <img src="IMAGES/dokter-gigi.jpg" alt="Dokter Gigi">
-    <h3>Dokter Gigi</h3>
-    <p>Klinik Gigi Sehat membutuhkan dokter gigi dengan pengalaman minimal 2 tahun.</p>
+    <!-- Judul Pekerjaan -->
+    <div class="section-title">
+      <h2>Pekerjaan</h2>
+    </div>
+
+    <!-- List Job -->
+    <section class="jobs-list">
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Dokter Gigi</h3>
+          <p class="company">
+            <img src="IMAGES/dokter-gigi.jpg" alt="Dokter Gigi" class="logo-inline">
+            Klinik Gigi Sehat
+          </p>
+          <p class="location">Semarang, Jawa Tengah</p>
+        </div>
+        <div class="job-meta">
+          <span class="type">Full-time</span>
+          <a href="job_dokter-gigi.html" class="apply-btn">Lamar</a>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Backend Engineer</h3>
+          <p class="company">
+            <img src="IMAGES/bacend.png" alt="CV Solusi Teknologi" class="logo-inline">
+            CV. Solusi Teknologi
+          </p>
+          <p class="location">Jakarta</p>
+        </div>
+        <div class="job-meta">
+          <span class="type">Part-time</span>
+          <a href="job-detail-backend.html" class="apply-btn">Lamar</a>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <div class="job-info">
+          <h3>Akuntan Junior</h3>
+          <p class="company">
+            <img src="IMAGES/finasia.png" alt="PT Finansia Bersama" class="logo-inline">
+            PT. Finansia Bersama
+          </p>
+          <p class="location">Surabaya</p>
+        </div>
+        <div class="job-meta">
+          <span class="type">Internship</span>
+          <a href="job-detail-akuntan.html" class="apply-btn">Lamar</a>
+        </div>
+      </div>
+    </section>
   </div>
-  </a>
-
-  <a href="job_IT-support.html" class="job-link">
-  <div class="job-card" data-kategori="IT">
-    <img src="IMAGES/IT-support.jpg" alt="Lowongan IT Support">
-    <h3>IT Support</h3>
-    <p>Dibutuhkan IT Support di perusahaan teknologi, penempatan Jakarta.</p>
   </div>
-  </a>
-
-  <a href="job_graphic-designer.html" class="job-link">
-  <div class="job-card" data-kategori="Desain">
-    <img src="IMAGES/graphic-designer.jpg" alt="Graphic Designer">
-    <h3>Graphic Designer</h3>
-    <p>Dicari graphic designer kreatif untuk brand fashion lokal. Penempatan Bandung atau remote.</p>
   </div>
-  </a>
-
-  <a href="job_admin.html" class="job-link">
-  <div class="job-card" data-kategori="Lainnya">
-    <img src="IMAGES/admin.jpg" alt="Administrasi Perkantoran">
-    <h3>Administrasi Perkantoran</h3>
-    <p>PT. Amanah Jaya membutuhkan staf administrasi untuk kantor distribusi. Minimal lulusan SMA/SMK.</p>
-  </div>
-  </a>
-
-<a href="job_marketing.html" class="job-link">
-<div class="job-card" data-kategori="Marketing">
-  <img src="IMAGES/marketing.jpg" alt="Marketing">
-  <h3>Marketing</h3>
-  <p>PT. Sukses Bersama membuka lowongan staf marketing digital. Penempatan Surabaya.</p>
-</div>
-</a>
-
-<a href="job_guru.html" class="job-link">
-<div class="job-card" data-kategori="Pendidikan">
-  <img src="IMAGES/guru.jpg" alt="Guru Bahasa Inggris">
-  <h3>Guru Bahasa Inggris</h3>
-  <p>Lembaga Kursus Smart English membutuhkan guru bahasa Inggris untuk mengajar siswa dari berbagai tingkat. Penempatan Bekasi.</p>
-</div>
-</a>
-
-<a href="job_koki.html" class="job-link">
-<div class="job-card" data-kategori="Lainnya">
-  <img src="IMAGES/koki.jpg" alt="Lowongan Koki">
-  <h3>Koki</h3>
-  <p>Restoran Restoran Rasa Nusantara mencari koki berpengalaman untuk masakan Nusantara. Penempatan di Yogya.</p>
-</div>
-</a>
-
-<a href="job_tekniksi.html" class="job-link">
-<div class="job-card" data-kategori="Teknik">
-  <img src="IMAGES/teknisi.jpg" alt="Lowongan Teknisi Mesin">
-  <h3>Teknisi Mesin</h3>
-  <p>PT Maju Teknik Jaya membuka lowongan teknisi mesin untuk lulusan SMK/D3 Teknik Mesin atau Elektro..</p>
-</div>
-</a>
     <footer class="footer">
     <p>&copy; 2025 LokaJob. All rights reserved.</p>
     </footer>
 </div>
+<script>
+  // Sidebar toggle
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+  }
 
- <script>
-  const buttons = document.querySelectorAll(".filter-btn");
-  const jobs = document.querySelectorAll(".job-card");
-  const searchInput = document.getElementById("searchInput");
+  // ==== FILTER ELEMENT ====
+  const kategoriFilter = document.getElementById("kategoriFilter");
+  const lokasiFilter = document.getElementById("lokasiFilter");
+  const perusahaanCards = document.querySelectorAll(".company-card");
 
-  function filterJobs(kategori, keyword) {
-    jobs.forEach(job => {
-      const jobKategori = job.getAttribute("data-kategori");
-      const text = job.innerText.toLowerCase();
-      const matchKategori = kategori === "all" || jobKategori === kategori;
-      const matchKeyword = text.includes(keyword);
-      job.style.display = (matchKategori && matchKeyword) ? "flex" : "none";
+  function applyCompanyFilters() {
+    const selectedKategori = kategoriFilter.value;
+    const selectedLokasi = lokasiFilter.value;
+
+    perusahaanCards.forEach(card => {
+      const cardKategori = card.getAttribute("data-kategori");
+      const cardLokasi = card.getAttribute("data-lokasi");
+
+      const matchKategori = selectedKategori === "all" || cardKategori === selectedKategori;
+      const matchLokasi = selectedLokasi === "all" || cardLokasi === selectedLokasi;
+
+      if (matchKategori && matchLokasi) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
     });
   }
 
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const kategori = btn.getAttribute("data-filter");
-      const keyword = searchInput.value.toLowerCase();
-      filterJobs(kategori, keyword);
-    });
-  });
-
-  function searchJob() {
-    const keyword = searchInput.value.toLowerCase();
-    const kategori = getActiveCategory();
-    filterJobs(kategori, keyword);
-  }
-
-  function getActiveCategory() {
-    const activeBtn = document.querySelector(".filter-btn.active");
-    return activeBtn ? activeBtn.getAttribute("data-filter") : "all";
-  }
+  kategoriFilter.addEventListener("change", applyCompanyFilters);
+  lokasiFilter.addEventListener("change", applyCompanyFilters);
 </script>
-
 </body>
 </html>
