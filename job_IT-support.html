@@ -4,6 +4,65 @@
   <meta charset="UTF-8">
   <title>Lowongan - IT Support</title>
   <link rel="stylesheet" href="CSS/Style_JobDetail.css">
+  <style>
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    .modal form input,
+    .modal form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .modal form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .modal form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -20,12 +79,24 @@
     </div>
 
     <div class="main-content">
-      <header class="header">
-        <h1>Detail Lowongan</h1>
-        <p>Berikut adalah detail lowongan pekerjaan</p>
-      </header>
+    <header class="header">
+      <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
+      <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
+      <div class="user-area">
+        <span class="username">Username</span>
+        <span class="notif-bell">🔔</span>
+      </div>
+    </header>
 
-      <section class="job-detail">
+    <div class="content-wrapper">
+      <div class="job-detail-header">
+        <h2>Detail Job</h2>
+        <p>Berikut adalah detail lowongan pekerjaan</p>
+      </div>
+
+      <div class="job-detail-card">
+        <img src="IMAGES/IT-support.jpg" alt="IT-support" class="job-detail-logo" />
+        <div class="job-detail-info">
         <h2>Lowongan: IT Support</h2>
         <p><strong>Perusahaan:</strong> PT Teknologi Nusantara</p>
         <p><strong>Lokasi:</strong> Jakarta</p>
@@ -61,9 +132,74 @@
           <li>Alamat: Jl. Sehat No. 10, Jakarta Selatan</li>
         </ul>
 
-        <a href="index.html" class="back-link">← Kembali ke Beranda</a>
-      </section>
+        <div class="job-detail-buttons">
+            <a class="back" href="#" onclick="
+              if (document.referrer) {
+                window.history.back(); 
+              } else {
+                window.location.href='index.html';
+              }">
+              &larr; Kembali ke halaman sebelumnya
+            </a>
+            <button class="apply-button" id="lamarBtn">Lamar Pekerjaan</button>
+          </div>
+
+        </div>
+      </div>
     </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 LokaJob. All rights reserved.</p>
+    </footer>
   </div>
+</div>
+
+<!-- Modal Pop-up -->
+<div id="lamarModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Formulir Lamaran</h2>
+    <form>
+<input type="text" placeholder="Nama Lengkap" required>
+        <input type="text" placeholder="Usia" required>
+        <input type="text" placeholder="Pendidikan Terakhir Cth. SMA/Universitas Unimus" required>
+        <input type="text" placeholder="Alamat Lengkap" required>
+        <input type="text" placeholder="Nomor Whatsapp" required>
+        <input type="email" placeholder="Email" required>
+         <label> Tambahkan CV </label>
+        <input type="file" placeholder="Masukan CV" required> 
+        <textarea placeholder="Pesan lamaran..." rows="4"></textarea>
+      
+
+      <button type="submit">Kirim Lamaran</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+  }
+
+  // Modal logic
+  const modal = document.getElementById("lamarModal");
+  const btn = document.getElementById("lamarBtn");
+  const span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = () => {
+    modal.style.display = "block";
+  }
+
+  span.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
 </body>
 </html>
