@@ -4,7 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detail Pekerjaan - Dokter Gigi</title>
-  <link rel="stylesheet" href="CSS/Style_JobDetail.css"> <!-- Sudah diganti -->
+  <link rel="stylesheet" href="CSS/Style_JobDetail.css">
+  <style>
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    .modal form input,
+    .modal form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .modal form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .modal form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
 <div class="main-container">
@@ -31,12 +90,12 @@
     </header>
 
     <div class="content-wrapper">
-      <div class="job-detail-header"> <!-- Ganti nama class -->
+      <div class="job-detail-header">
         <h2>Detail Job</h2>
         <p>Berikut adalah detail lowongan pekerjaan</p>
       </div>
 
-      <div class="job-detail-card"> <!-- Ganti nama class -->
+      <div class="job-detail-card">
         <img src="IMAGES/dokter-gigi.jpg" alt="Logo Dokter Gigi" class="job-detail-logo" />
         <div class="job-detail-info">
           <h3>Dokter Gigi</h3>
@@ -86,11 +145,7 @@
               }">
               &larr; Kembali ke halaman sebelumnya
             </a>
-              <a class="apply-button" 
-     href="mailto:hrd123@gmail.com?subject=Lamar%20Pekerjaan%20-%20Dokter%20Gigi&body=Yth.%20Klinik%20Gigi%20Sehat,%0D%0A%0D%0ASaya%20tertarik%20untuk%20melamar%20posisi%20Dokter%20Gigi%20yang%20Bapak/Ibu%20tawarkan.%0D%0ABerikut%20saya%20lampirkan%20CV%20dan%20dokumen%20pendukung%20lainnya.%0D%0A%0D%0AHormat%20saya,%0D%0ANama%20Anda">
-     Lamar Pekerjaan
-  </a>
-
+            <button class="apply-button" id="lamarBtn">Lamar Pekerjaan</button>
           </div>
 
         </div>
@@ -103,10 +158,51 @@
   </div>
 </div>
 
+<!-- Modal Pop-up -->
+<div id="lamarModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Formulir Lamaran</h2>
+    <form>
+<input type="text" placeholder="Nama Lengkap" required>
+        <input type="text" placeholder="Usia" required>
+        <input type="text" placeholder="Pendidikan Terakhir Cth. SMA/Universitas Unimus" required>
+        <input type="text" placeholder="Alamat Lengkap" required>
+        <input type="text" placeholder="Nomor Whatsapp" required>
+        <input type="email" placeholder="Email" required>
+         <label> Tambahkan CV </label>
+        <input type="file" placeholder="Masukan CV" required> 
+        <textarea placeholder="Pesan lamaran..." rows="4"></textarea>
+      
+
+      <button type="submit">Kirim Lamaran</button>
+    </form>
+  </div>
+</div>
+
 <script>
   function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
     sidebar.classList.toggle('active');
+  }
+
+  // Modal logic
+  const modal = document.getElementById("lamarModal");
+  const btn = document.getElementById("lamarBtn");
+  const span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = () => {
+    modal.style.display = "block";
+  }
+
+  span.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
   }
 </script>
 </body>
