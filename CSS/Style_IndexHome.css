@@ -133,8 +133,18 @@ body, html {
 .username {
   font-weight: bold;
 }
+
 .notif-bell {
   font-size: 20px;
+}
+
+.footer {
+  background-color: #0d255a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  border-top: 2px solid #ffcb05;
 }
 
 .category-buttons {
