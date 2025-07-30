@@ -2,68 +2,112 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Lowongan - Dokter Gigi</title>
-  <link rel="stylesheet" href="CSS/Style_JobDetail.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Pekerjaan - Dokter Gigi</title>
+  <link rel="stylesheet" href="CSS/Style_JobDetail.css"> <!-- Sudah diganti -->
 </head>
 <body>
-  <div class="container">
-    <div class="sidebar">
-      <h2 class="logo">LokaJob</h2>
-      <ul>
-      <li><a class="active" href="index.html">Home</a></li>
+<div class="main-container">
+  <div class="sidebar">
+    <div class="logo">Loka<span>Job</span></div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
       <li><a href="Company.html">Company</a></li>
-      <li><a href="Jobsite.html">Job</a></li>
+      <li><a href="Jobsite.html" class="active">Job</a></li>
       <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
       <li><a href="profil.html">Profil</a></li>
       <li><a href="about.html">About Us</a></li>
-      </ul>
-    </div>
+    </ul>
+  </div> 
 
-    <div class="main-content">
-        <header class="header">
-        <h1>Detail Lowongan</h1>
+  <div class="main-content">
+    <header class="header">
+      <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
+      <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
+      <div class="user-area">
+        <span class="username">Username</span>
+        <span class="notif-bell">🔔</span>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <div class="job-detail-header"> <!-- Ganti nama class -->
+        <h2>Detail Job</h2>
         <p>Berikut adalah detail lowongan pekerjaan</p>
-      </header>
+      </div>
 
-      <section class="job-detail">
-        <h2>Lowongan: Dokter Gigi</h2>
-        <p><strong>Perusahaan:</strong> Klinik Gigi Sehat</p>
-        <p><strong>Lokasi:</strong> Jakarta</p>
-        <p><strong>Gaji:</strong> Rp 8.000.000 - Rp 12.000.000</p>
+      <div class="job-detail-card"> <!-- Ganti nama class -->
+        <img src="IMAGES/dokter-gigi.jpg" alt="Logo Dokter Gigi" class="job-detail-logo" />
+        <div class="job-detail-info">
+          <h3>Dokter Gigi</h3>
+          <p><strong>Perusahaan:</strong> Klinik Gigi Sehat</p>
+          <p><strong>Lokasi:</strong> Jakarta</p>
+          <p><strong>Gaji:</strong> Rp 8.000.000 - Rp 12.000.000</p>
 
-        <h3>Deskripsi Pekerjaan:</h3>
-        <ul>
-          <li>Memberikan layanan pemeriksaan, perawatan, dan pencegahan masalah kesehatan gigi dan mulut kepada pasien.</li>
-          <li>Menyusun rencana perawatan berdasarkan kebutuhan pasien.</li>
-          <li>Memberikan edukasi mengenai kesehatan gigi dan mulut.</li>
-          <li>Mengelola catatan medis pasien dengan baik.</li>
-        </ul>
+          <h3>Deskripsi Pekerjaan:</h3>
+          <ul>
+            <li>Memberikan layanan pemeriksaan, perawatan, dan pencegahan masalah kesehatan gigi dan mulut kepada pasien.</li>
+            <li>Menyusun rencana perawatan berdasarkan kebutuhan pasien.</li>
+            <li>Memberikan edukasi mengenai kesehatan gigi dan mulut.</li>
+            <li>Mengelola catatan medis pasien dengan baik.</li>
+          </ul>
+          <br>
 
-        <h3>Kualifikasi:</h3>
-        <ul>
-          <li>Minimal pendidikan S1 Kedokteran Gigi dan memiliki STR aktif.</li>
-          <li>Pengalaman kerja minimal 2 tahun sebagai dokter gigi.</li>
-          <li>Berorientasi pada pelayanan pasien dan etika kerja tinggi.</li>
-          <li>Mampu bekerja secara tim dan individual.</li>
-        </ul>
+          <h3>Kualifikasi:</h3>
+          <ul>
+            <li>Minimal pendidikan S1 Kedokteran Gigi dan memiliki STR aktif.</li>
+            <li>Pengalaman kerja minimal 2 tahun sebagai dokter gigi.</li>
+            <li>Berorientasi pada pelayanan pasien dan etika kerja tinggi.</li>
+            <li>Mampu bekerja secara tim dan individual.</li>
+          </ul>
+          <br>
 
-        <h3>Benefit:</h3>
-        <ul>
-          <li>Gaji kompetitif.</li>
-          <li>Tunjangan kesehatan dan bonus tahunan.</li>
-          <li>Fasilitas klinik lengkap dan modern.</li>
-        </ul>
+          <h3>Benefit:</h3>
+          <ul>
+            <li>Gaji kompetitif.</li>
+            <li>Tunjangan kesehatan dan bonus tahunan.</li>
+            <li>Fasilitas klinik lengkap dan modern.</li>
+          </ul>
+          <br>
 
-        <h3>Kontak Perusahaan:</h3>
-        <ul>
-          <li>Email: hrd123@gmail.com</li>
-          <li>Telepon: 0812-3456-7890</li>
-          <li>Alamat: Jl. Sehat No. 10, Jakarta Utara</li>
-        </ul>
+          <h3>Kontak Perusahaan:</h3>
+          <ul>
+            <li>Email: hrd123@gmail.com</li>
+            <li>Telepon: 0812-3456-7890</li>
+            <li>Alamat: Jl. Sehat No. 10, Jakarta Utara</li>
+          </ul>
 
-        <a href="index.html" class="back-link">← Kembali ke Beranda</a>
-      </section>
+          <div class="job-detail-buttons">
+            <a class="back" href="#" onclick="
+              if (document.referrer) {
+                window.history.back(); 
+              } else {
+                window.location.href='index.html';
+              }">
+              &larr; Kembali ke halaman sebelumnya
+            </a>
+              <a class="apply-button" 
+     href="mailto:hrd123@gmail.com?subject=Lamar%20Pekerjaan%20-%20Dokter%20Gigi&body=Yth.%20Klinik%20Gigi%20Sehat,%0D%0A%0D%0ASaya%20tertarik%20untuk%20melamar%20posisi%20Dokter%20Gigi%20yang%20Bapak/Ibu%20tawarkan.%0D%0ABerikut%20saya%20lampirkan%20CV%20dan%20dokumen%20pendukung%20lainnya.%0D%0A%0D%0AHormat%20saya,%0D%0ANama%20Anda">
+     Lamar Pekerjaan
+  </a>
+
+          </div>
+
+        </div>
+      </div>
     </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 LokaJob. All rights reserved.</p>
+    </footer>
   </div>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+  }
+</script>
 </body>
 </html>
