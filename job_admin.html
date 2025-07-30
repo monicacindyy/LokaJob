@@ -4,66 +4,202 @@
   <meta charset="UTF-8">
   <title>Lowongan - Administrasi Perkantoran</title>
   <link rel="stylesheet" href="CSS/Style_JobDetail.css">
+ <style>
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: red;
+    }
+
+    .modal form input,
+    .modal form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .modal form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .modal form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="sidebar">
-      <h2 class="logo">LokaJob</h2>
-      <ul>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="Company.html">Company</a></li>
-        <li><a href="Jobsite.html">Job</a></li>
-        <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
-        <li><a href="profil.html">Profil</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-    </div>
+<div class="main-container">
+  <div class="sidebar">
+    <div class="logo">Loka<span>Job</span></div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Company.html">Company</a></li>
+      <li><a href="Jobsite.html" class="active">Job</a></li>
+      <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </div> 
 
-    <div class="main-content">
-      <header class="header">
-        <h1>Detail Lowongan</h1>
+  <div class="main-content">
+    <header class="header">
+      <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
+      <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
+      <div class="user-area">
+        <span class="username">Username</span>
+        <span class="notif-bell">🔔</span>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <div class="job-detail-header">
+        <h2>Detail Job</h2>
         <p>Berikut adalah detail lowongan pekerjaan</p>
-      </header>
+      </div>
 
-      <section class="job-detail">
-        <h2>Lowongan: Administrasi Perkantoran</h2>
-        <p><strong>Perusahaan:</strong> PT Amanah Jaya</p>
-        <p><strong>Lokasi:</strong> Semarang</p>
-        <p><strong>Gaji:</strong> Rp 4.000.000 - Rp 5.500.000</p>
+      <div class="job-detail-card">
+        <img src="IMAGES/admin.jpg" alt="Logo Administrasi" class="job-detail-logo" />
+        <div class="job-detail-info">
+          <h3>Admin Perkantoran</h3>
+          <p><strong>Perusahaan:</strong> PT. Amanah Jaya</p>
+          <p><strong>Lokasi:</strong> Tegal</p>
+          <p><strong>Gaji:</strong> Rp 3.000.000 - Rp 8.000.000</p>
 
-        <h3>Deskripsi Pekerjaan:</h3>
-        <ul>
-          <li>Menegola dokumen dan arsip kantor dengan rapi dan sistematis.</li>
-          <li>Membuat laporan harian, mingguan, dan bulanan sesuai permintaan atasan.</li>
-          <li>Menjawab telepon, email, dan menyambut tamu yang datang ke kantor.</li>
-          <li>Mendukung kelancaran kegiatan operasional harian kantor.</li>
-        </ul>
+          <h3>Deskripsi Pekerjaan:</h3>
+          <ul>
+            <li>PT Amanah Jaya adalah perusahaan yang bergerak di bidang distribusi kebutuhan pokok dan barang konsumsi.Berdiri sejak 2010, kami berkomitmen untuk memberikan pelayanan yang amanah, cepat, dan terpercaya kepada pelanggan di seluruh Indonesia. Dengan jaringan distribusi yang luas, kami siap menjadi mitra strategis bagi pemasok dan konsumen.</li>
+          </ul>
+          <br>
 
-        <h3>Kualifikasi:</h3>
-        <ul>
-          <li>Lulusan minimal SMA/SMK Administrasi Perkantoran atau setara.</li>
-          <li>Mahir menggunakan Microsoft Office (Word, Excel, PowerPoint).</li>
-          <li>Teliti, rapi, dan memiliki komunikasi yang baik.</li>
-          <li>Pengalaman kerja sebagai admin minimal 1 tahun lebih disukai.</li>
-        </ul>
+          <h3>Kualifikasi:</h3>
+          <ul>
+            <li>Minimal pendidikan SMA/SMK Akuntansi.</li>
+            <li>Fresh Graduate bisa mendaftar.</li>
+            <li>Wanita.</li>
+            <li>Mampu bekerja secara tim dan individual.</li>
+          </ul>
+          <br>
 
-        <h3>Benefit:</h3>
-        <ul>
-          <li>Lingkungan kerja nyaman dan profesional.</li>
-          <li>Tunjangan kesehatan dan transportasi.</li>
-          <li>Cuti tahunan dan THR.</li>
-        </ul>
+          <h3>Benefit:</h3>
+          <ul>
+            <li>Gaji kompetitif.</li>
+            <li>Tunjangan kesehatan dan bonus tahunan.</li>
+          
+          </ul>
+          <br>
 
-        <h3>Kontak Perusahaan:</h3>
-        <ul>
-          <li>Email: hrd123@gmail.com</li>
-          <li>Telepon: 0812-3456-7890</li>
-          <li>Alamat: Jl. Sehat No. 10, Semarang Selatan</li>
-        </ul>
+          <h3>Kontak Perusahaan:</h3>
+          <ul>
+            <li>Email: hrd123@gmail.com</li>
+            <li>Telepon: 0812-3456-7890</li>
+            <li>Alamat: Jl. Sehat No. 10, Kota Tegal</li>
+          </ul>
 
-        <a href="index.html" class="back-link">← Kembali ke Beranda</a>
-      </section>
+          <div class="job-detail-buttons">
+            <a class="back" href="#" onclick="
+              if (document.referrer) {
+                window.history.back(); 
+              } else {
+                window.location.href='index.html';
+              }">
+              &larr; Kembali ke halaman sebelumnya
+            </a>
+            <button class="apply-button" id="lamarBtn">Lamar Pekerjaan</button>
+          </div>
+
+        </div>
+      </div>
     </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 LokaJob. All rights reserved.</p>
+    </footer>
   </div>
+</div>
+
+<!-- Modal Pop-up -->
+<div id="lamarModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Formulir Lamaran</h2>
+    <form>
+<input type="text" placeholder="Nama Lengkap" required>
+        <input type="text" placeholder="Usia" required>
+        <input type="text" placeholder="Pendidikan Terakhir Cth. SMA/Universitas Unimus" required>
+        <input type="text" placeholder="Alamat Lengkap" required>
+        <input type="text" placeholder="Nomor Whatsapp" required>
+        <input type="email" placeholder="Email" required>
+         <label> Tambahkan CV </label>
+        <input type="file" placeholder="Masukan CV" required> 
+        <textarea placeholder="Pesan lamaran..." rows="4"></textarea>
+      
+
+      <button type="submit">Kirim Lamaran</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+  }
+
+  // Modal logic
+  const modal = document.getElementById("lamarModal");
+  const btn = document.getElementById("lamarBtn");
+  const span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = () => {
+    modal.style.display = "block";
+  }
+
+  span.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
 </body>
 </html>
