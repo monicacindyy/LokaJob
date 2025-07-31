@@ -1,0 +1,34 @@
+<div id="history-container"></div>
+
+<script>
+  const lamaranHistory = [
+    {
+      perusahaan: "PT. Mencari Cinta Sejati",
+      waktu: "2025-07-30 14:35"
+    },
+    {
+      perusahaan: "CV. Bahagia Selalu",
+      waktu: "2025-07-25 09:20"
+    }
+  ];
+
+  function tampilkanHistory() {
+    const container = document.getElementById("history-container");
+    lamaranHistory.forEach(entry => {
+      const notif = document.createElement("div");
+      notif.className = "notifikasi";
+      notif.innerHTML = `
+        📌 ${formatWaktu(entry.waktu)} — Kamu melamar ke <strong>${entry.perusahaan}</strong>
+      `;
+      container.appendChild(notif);
+    });
+  }
+
+  function formatWaktu(waktuStr) {
+    const tanggal = new Date(waktuStr);
+    const opsi = { day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" };
+    return tanggal.toLocaleString("id-ID", opsi);
+  }
+
+  tampilkanHistory();
+</script>
