@@ -238,8 +238,6 @@ body, html {
   text-decoration: underline;
 }
 
-/* Sudah termasuk bagian sidebar dan header di atas */
-/* Company Cards */
 /* Container Grid */
 .company-grid {
   display: grid;
@@ -251,11 +249,16 @@ body, html {
 /* Kartu Perusahaan */
 .company-card {
   background: #fff;
-  padding: 16px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* biar vertikal center */
+  text-align: center;
 }
 
 .company-card:hover {
@@ -265,27 +268,24 @@ body, html {
 
 /* Logo */
 .company-logo {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-/* Nama Perusahaan */
 .company-card h3 {
   font-size: 18px;
   color: #163c7d;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-/* Deskripsi Singkat */
 .company-card p {
   font-size: 14px;
   color: #555;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
-/* Lokasi */
 .location {
   font-size: 13px;
   color: #777;
