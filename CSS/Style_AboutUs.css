@@ -1,4 +1,4 @@
-{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,10 +19,10 @@ body, html {
 /* Sidebar */
 .sidebar {
   width: 120px;
-  padding-top: 35px; 
+  padding-top: 35px;
   position: fixed;
   top: 0;
-  left: -250px; 
+  left: -250px;
   height: 100%;
   background-color: #0a1d56;
   transition: left 0.3s ease;
@@ -48,24 +48,22 @@ body, html {
 }
 
 .sidebar .menu li {
-  margin: 10px 0;
+  margin: 18px 0;
 }
 
 .sidebar .menu li a {
-  color: white;
   text-decoration: none;
+  color: white;
+  font-weight: 500;
   padding: 10px;
   display: block;
   transition: background 0.3s;
 }
 
+.sidebar .menu li a.active,
 .sidebar .menu li a:hover {
-  background-color: #1a2b6d;
-}
-
-.sidebar .menu li a.active {
   background-color: #0d1b44;
-  color: yellow;
+  color: #ffcb05;
   font-weight: bold;
   border-radius: 8px;
   box-shadow: 0 0 10px #0d1b44;
@@ -77,24 +75,9 @@ body, html {
   cursor: pointer;
   color: white;
 }
+
 .logo span {
   color: #ff0066;
-}
-
-.menu {
-  list-style: none;
-}
-.menu li {
-  margin: 18px 0;
-}
-.menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-}
-.menu a.active,
-.menu a:hover {
-  color: #ffcb05;
 }
 
 /* Header */
@@ -109,8 +92,8 @@ body, html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; 
-  z-index: 999; 
+  height: 80px;
+  z-index: 999;
 }
 
 .search-bar {
@@ -134,39 +117,26 @@ body, html {
 .username {
   font-weight: bold;
 }
+
 .notif-bell {
   font-size: 20px;
 }
 
-/* Footer */
-.footer {
-  background-color: #0d255a;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  font-size: 14px;
-  border-top: 2px solid #ffcb05;
-}
-
-/* Main content */
+/* Konten Utama */
 .main-content {
-  margin-left: 220px;
-  padding: 20px;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: 0;
 }
 
-.header {
-  background-color: #0047ab;
-  color: white;
-  padding: 30px;
-  text-align: center;
-  border-radius: 10px;
+.content-wrapper {
+  flex-grow: 1;
+  padding: 100px 40px 20px;
 }
 
-.header p {
-  color: #ffcc00;
-}
-
+/* Section Umum */
 section {
   margin-top: 30px;
   background-color: white;
@@ -230,17 +200,21 @@ ul {
   text-decoration: none;
 }
 
+/* Footer */
+.footer {
+  background-color: #0d255a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  border-top: 2px solid #ffcb05;
+  margin-top: auto;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-
   .main-content {
     margin-left: 0;
-    padding: 10px;
   }
 
   .card-container {
