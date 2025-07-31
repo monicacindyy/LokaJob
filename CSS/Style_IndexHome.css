@@ -152,8 +152,8 @@ body, html {
   padding: 100px 40px 20px; /* 100px di atas sebagai ruang untuk header */
 }
 
-/* Company Header */
-.company-header {
+/* Home Header */
+.home-header {
   background-color: #103a73;
   color: white;
   padding: 20px;
@@ -161,263 +161,107 @@ body, html {
   text-align: center;
   margin-bottom: 20px;
 }
-.company-header h2 {
+.home-header h2 {
   font-size: 24px;
   font-weight: bold;
 }
-
-/* Company Card */
-.company-card {
-  background-color: #163b6c;
-  color: white;
-  border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.company-logo {
-  width: 200px;
-  height: auto;
-  border-radius: 12px;
-  background: white;
-  padding: 10px;
-}
-
-.company-info {
-  flex: 1;
-}
-
-.company-info h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.company-info p {
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.company-details {
-  list-style: none;
-  margin-bottom: 20px;
-}
-.company-details li {
-  margin-bottom: 5px;
-}
-/* Job Header */
-.job-header {
-  background-color: #103a73;
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.job-header h2 {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Job Card Wrapper */
-.job-card-wrapper {
-  background-color: #163b6c;
-  color: white;
-  border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.job-logo {
-  width: 200px;
-  height: auto;
-  border-radius: 12px;
-  background: white;
-  padding: 10px;
-}
-
-.job-info {
-  flex: 1;
-}
-
-.job-info h3 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.job-info p {
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-.job-details {
-  list-style: none;
-  margin-bottom: 20px;
-}
-.job-details li {
-  margin-bottom: 5px;
-}
-
-/* Back button tetap */
-.back {
-  display: inline-block;
-  margin-top: 30px;
-  color: #ffcb05;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.back:hover {
-  text-decoration: underline;
-}
-
-/* Cards Grid */
+/* Grid Container untuk Company & Job */
+.company-grid,
 .jobs-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 kolom responsif */
   gap: 20px;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Job Card */
+/* Kartu Perusahaan dan Pekerjaan (Horizontal Style) */
+.company-card,
 .job-card {
-  background: #fff;
+  display: flex;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.2s;
+  align-items: stretch; /* membuat tinggi konten seragam */
+  min-height: 180px;    /* atau sesuaikan tingginya */
+}
+
+.company-card:hover,
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.company-card img,
+.job-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 20px;
   border-radius: 10px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* bisa bantu jika logo transparan */
+}
+
+/* Bagian Informasi */
+.company-info,
+.job-info {
+  padding: 15px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.job-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.job-info h3 {
-  font-size: 18px;
-  color: #163c7d;
+  justify-content: center;
   margin-bottom: 6px;
 }
 
-.company,
-.location {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 4px;
-}
-
-.job-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 12px;
-}
-
-/* Container Grid */
-.company-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
-  margin: 40px 0;
-}
-
-/* Kartu Perusahaan */
-.company-card {
-  background: #fff;
-  padding: 16px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.company-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Logo */
-.company-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-/* Nama Perusahaan */
-.company-card h3 {
-  font-size: 18px;
-  color: #163c7d;
+.company-info h3,
+.job-info h3 {
   margin-bottom: 8px;
+  font-size: 18px;
+  color: #0a1d56;
 }
 
-/* Deskripsi Singkat */
-.company-card p {
+.company-info p,
+.job-info p {
   font-size: 14px;
-  color: #555;
-  margin-bottom: 10px;
+  color: #444;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* batas 3 baris */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Lokasi */
 .location {
   font-size: 13px;
   color: #777;
-  display: block;
-  margin-bottom: 10px;
+  margin-top: 5px;
 }
 
-/* Tombol */
-.detail-btn {
-  display: inline-block;
-  padding: 6px 12px;
-  background: #0047ab;
-  color: #fff;
-  border-radius: 6px;
-  font-size: 14px;
+.detail-btn,
+.apply-btn {
+  align-self: flex-start;
+  margin-top: 12px; /* dorong ke bawah */
+  padding: 8px 16px;
+  background-color: #0a1d56;
+  color: white;
+  border-radius: 10px;
   text-decoration: none;
-  transition: background 0.2s;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.detail-btn:hover {
-  background-color: #003380;
+.detail-btn:hover,
+.apply-btn:hover {
+  background-color: #ffcb05;
+  color: #0a1d56;
 }
 
-@media (max-width: 1024px) {
-  .company-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .company-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* FILTER */
-.company-filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-  align-items: center;
-  
-}
-
-.company-filter select {
-  padding: 10px 14px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
-  background-color: #fff;
-  color: #333;
-  min-width: 200px;
+.job-type {
+  font-size: 0.9rem;
+  color: #0a1d56;
+  margin: 5px 0;
 }
 
 .section-title {
@@ -444,6 +288,29 @@ body, html {
   }
 }
 
+@media (max-width: 1024px) {
+  .jobs-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .jobs-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .company-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Footer */
 .footer {
