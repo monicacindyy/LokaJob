@@ -15,13 +15,14 @@ body, html {
   display: flex;
   min-height: 100vh;
 }
+
 /* Sidebar */
 .sidebar {
   width: 120px;
-  padding-top: 35px; /* beri ruang di atas untuk logo */
+  padding-top: 35px;
   position: fixed;
   top: 0;
-  left: -250px; /* awalnya tersembunyi */
+  left: -250px;
   height: 100%;
   background-color: #0a1d56;
   transition: left 0.3s ease;
@@ -70,13 +71,13 @@ body, html {
   box-shadow: 0 0 10px #0d1b44;
 }
 
-
 .logo {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   color: white;
 }
+
 .logo span {
   color: #ff0066;
 }
@@ -84,14 +85,17 @@ body, html {
 .menu {
   list-style: none;
 }
+
 .menu li {
   margin: 18px 0;
 }
+
 .menu a {
   text-decoration: none;
   color: white;
   font-weight: 500;
 }
+
 .menu a.active,
 .menu a:hover {
   color: #ffcb05;
@@ -109,8 +113,8 @@ body, html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* kamu bisa sesuaikan jika butuh */
-  z-index: 999; /* agar tampil di atas elemen lain */
+  height: 80px;
+  z-index: 999;
 }
 
 .search-bar {
@@ -125,7 +129,6 @@ body, html {
   display: block;
 }
 
-
 .user-area {
   display: flex;
   align-items: center;
@@ -135,12 +138,13 @@ body, html {
 .username {
   font-weight: bold;
 }
+
 .notif-bell {
   font-size: 20px;
 }
 
 /* Konten Utama */
-.main-content {
+.joj-content {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -149,11 +153,11 @@ body, html {
 
 .content-wrapper {
   flex-grow: 1;
-  padding: 100px 40px 20px; /* 100px di atas sebagai ruang untuk header */
+  padding: 100px 40px 20px;
 }
 
-/* Job Header */
-.job-header {
+/* Jod Header */
+.jod-header {
   background-color: #103a73;
   color: white;
   padding: 20px;
@@ -161,13 +165,14 @@ body, html {
   text-align: center;
   margin-bottom: 20px;
 }
-.job-header h2 {
+
+.jod-header h2 {
   font-size: 24px;
   font-weight: bold;
 }
 
-/* Job Card Wrapper */
-.job-card-wrapper {
+/* Jod Card Wrapper */
+.jod-card-wrapper {
   background-color: #163b6c;
   color: white;
   border-radius: 15px;
@@ -177,7 +182,7 @@ body, html {
   flex-wrap: wrap;
 }
 
-.job-logo {
+.jod-logo {
   width: 200px;
   height: auto;
   border-radius: 12px;
@@ -185,29 +190,35 @@ body, html {
   padding: 10px;
 }
 
-.job-info {
+.jod-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.job-info h3 {
+.jod-info h3 {
   font-size: 22px;
   margin-bottom: 10px;
 }
 
-.job-info p {
-  margin-bottom: 15px;
+.jod-info p {
+  margin-bottom: 10px;
   line-height: 1.6;
 }
 
-.job-details {
+/* Detail Jod */
+.jod-details {
   list-style: none;
   margin-bottom: 20px;
 }
-.job-details li {
+
+.jod-details li {
   margin-bottom: 5px;
 }
 
-/* Back button tetap */
+/* Back button */
 .back {
   display: inline-block;
   margin-top: 30px;
@@ -220,71 +231,105 @@ body, html {
   text-decoration: underline;
 }
 
-/* Cards Grid */
-.jobs-list {
+/* Jod Grid */
+.jod-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  padding: 20px;
 }
 
-/* Job Card */
-.job-card {
-  background: #fff;
-  border-radius: 10px;
-  padding: 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
+.jod-card {
+ display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.job-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.job-info h3 {
-  font-size: 18px;
-  color: #163c7d;
-  margin-bottom: 6px;
-}
-
-.company,
-.location {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 4px;
-}
-
-.job-meta {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 12px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 100%; /* biar menyesuaikan grid */
+  box-sizing: border-box;
 }
 
-/* ... bagian bawah tetap sama ... */
+.jod-card:hover {
+  transform: translateY(-5px);
+}
 
-/* Responsive untuk job grid */
+.jod-card img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.btn-detail {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #0a1d56;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.btn-detail:hover {
+  background-color: #ffcb05;
+  color: #0a1d56;
+}
+
+/* =========================== */
+/* FILTER JODSITE STYLING     */
+/* =========================== */
+.jod-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.jod-filter select {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  min-width: 180px;
+  transition: border 0.3s;
+}
+
+.jod-filter select:focus {
+  border-color: #1e3163;
+  outline: none;
+  box-shadow: 0 0 5px rgba(30, 49, 99, 0.5);
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
-  .job-grid {
+  .jod-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .job-grid {
+  .jod-list {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .main-content {
+  .joj-content {
     margin-left: 0;
   }
 
-  .job-container {
+  .jod-container {
     grid-template-columns: 1fr;
   }
 }

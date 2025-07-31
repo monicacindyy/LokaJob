@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lowongan - Staff Administrasi</title>
+  <link rel="stylesheet" href="CSS/Style_JobDetail.css" />
+  <style>
+    /* (style modal tetap sama seperti yang diberikan) */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2 class="logo">LokaJob</h2>
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="Company.html">Company</a></li>
+        <li><a href="Jobsite.html">Job</a></li>
+        <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+   <div class="main-content">
+    <header class="header">
+      <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
+      <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
+      <div class="user-area">
+        <span class="username">Username</span>
+        <span class="notif-bell">🔔</span>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <div class="job-detail-header">
+        <h2>Detail Job</h2>
+        <p>Berikut adalah detail lowongan pekerjaan</p>
+      </div>
+
+      <div class="job-detail-card">
+        <div class="job-detail-info">
+        <h2>Lowongan: Staff Administrasi</h2>
+        <p><strong>Perusahaan:</strong> PT Indofood Sukses Makmur Tbk</p>
+        <p><strong>Lokasi:</strong> Jakarta</p>
+        <p><strong>Gaji:</strong> Rp 4.000.000 - Rp 6.000.000</p>
+
+
+        <h3>Kualifikasi</h3>
+        <ul>
+          <li>Pendidikan minimal SMA/SMK Administrasi Perkantoran atau D3/S1 setara</li>
+          <li>Menguasai Microsoft Office (Word, Excel, dll)</li>
+          <li>Teliti, rapi, dan memiliki kemampuan komunikasi yang baik</li>
+          <li>Berpengalaman lebih diutamakan</li>
+        </ul>
+
+        <h3>Benefit</h3>
+        <ul>
+          <li>Gaji Pokok & Tunjangan</li>
+          <li>BPJS Kesehatan dan Ketenagakerjaan</li>
+          <li>Uang makan dan transport</li>
+          <li>Jenjang karir</li>
+        </ul>
+
+        <h3>Lokasi</h3>
+        <p>Jakarta Pusat, DKI Jakarta</p>
+
+        <h3>Jenis Pekerjaan</h3>
+        <p>Full-time</p>
+
+        <h3>Kontak</h3>
+        <p>Email: hrd@indofood.co.id</p>
+        <p>Telepon: (021) 12345678</p>
+        
+         <div class="job-detail-buttons">
+            <a class="back" href="#" onclick="
+              if (document.referrer) {
+                window.history.back(); 
+              } else {
+                window.location.href='index.html';
+              }">
+              &larr; Kembali ke halaman sebelumnya
+            </a>
+            <button class="apply-button" id="lamarBtn">Lamar Pekerjaan</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 LokaJob. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+
+<!-- Modal Pop-up -->
+<div id="lamarModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Formulir Lamaran</h2>
+    <form>
+      <input type="text" placeholder="Nama Lengkap" required>
+      <input type="text" placeholder="Usia" required>
+      <input type="text" placeholder="Pendidikan Terakhir Cth. SMA/Universitas Unimus" required>
+      <input type="text" placeholder="Alamat Lengkap" required>
+      <input type="text" placeholder="Nomor Whatsapp" required>
+      <input type="email" placeholder="Email" required>
+      <label> Tambahkan CV </label>
+      <input type="file" placeholder="Masukan CV" required> 
+      <textarea placeholder="Pesan lamaran..." rows="4"></textarea>
+      <button type="submit">Kirim Lamaran</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+  }
+
+  const modal = document.getElementById("lamarModal");
+  const btn = document.getElementById("lamarBtn");
+  const span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = () => {
+    modal.style.display = "block";
+  }
+
+  span.onclick = () => {
+    modal.style.display = "none";
+  }
+
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>
+

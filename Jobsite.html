@@ -1,161 +1,304 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail Pekerjaan - Sari Roti</title>
-  <link rel="stylesheet" href="CSS/Style_JobSite.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jodsite - LokaJob</title>
+  <link rel="stylesheet" href="CSS/Style_JobSite.css" />
 </head>
 <body>
+  <div class="main-container">
+    <div class="sidebar">
+      <div class="logo">Loka<span>Job</span></div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Company.html">Company</a></li>
+        <li><a href="Jodsite.html" class="active">Jod</a></li>
+        <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
+        <li><a href="profil.html">Profil</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="joj-content">
+      <header class="header">
+        <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
+        <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
+        <div class="user-area">
+          <span class="username">Username</span>
+          <span class="notif-bell">🔔</span>
+        </div>
+      </header>
+
+      <div class="content-wrapper">
+        <div class="jod-header">
+          <h2>Job</h2>
+          <p>Cari peluang terbaik untuk kariermu</p>
+        </div>
+
+        <!-- Filter -->
+        <section class="jod-filter" style="display: flex; gap: 10px; margin-bottom: 20px;">
+          <select id="kategoriFilter">
+            <option value="all">Semua Kategori</option>
+            <option value="Dokter Gigi">Dokter Gigi</option>
+            <option value="IT & Engineering">IT & Engineering</option>
+            <option value="Finance & Accounting">Finance & Accounting</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Education">Education</option>
+            <option value="Food Services">Food Services</option>
+          </select>
+
+          <select id="lokasiFilter">
+            <option value="all">Semua Lokasi</option>
+            <option value="jakarta">Jakarta</option>
+            <option value="bandung">Bandung</option>
+            <option value="semarang">Semarang</option>
+            <option value="surabaya">Surabaya</option>
+          </select>
+
+          <select id="tipeFilter">
+            <option value="all">Semua Tipe</option>
+            <option value="Full-time">Full-time</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Internship">Internship</option>
+          </select>
+        </section>
+
+        <section class="jod-list">
+          <div class="jod-card" data-kategori="admin" data-lokasi="jakarta" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Staff Administrasi</h3>
+              <img src="IMAGES/indofood.jpg" alt="Indofood" />
+              <p>PT Indofood Sukses Makmur Tbk</p>
+              <p>Menangani dokumen, arsip, dan laporan kantor.</p>
+              <p><strong>Lokasi:</strong> Jakarta</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_indofood_admin.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="teknisi" data-lokasi="semarang" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Teknisi Mesin Produksi</h3>
+              <img src="IMAGES/PT Industri Jamu dan Farmasi Sido Muncul Tbk.png" alt="Sido Muncul" />
+              <p>PT Industri Jamu dan Farmasi Sido Muncul Tbk</p>
+              <p>Memastikan mesin produksi berjalan optimal dan melakukan perawatan berkala.</p>
+              <p><strong>Lokasi:</strong> Semarang</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_sidomuncul_teknisi.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="it-support" data-lokasi="bekasi" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>IT Support</h3>
+              <img src="IMAGES/PT Sinar Sosro.png" alt="Sosro" />
+              <p>PT Sinar Sosro</p>
+              <p>Menangani troubleshooting sistem dan perawatan perangkat IT perusahaan.</p>
+              <p><strong>Lokasi:</strong> Bekasi</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_sosro_it-support.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="karyawan" data-lokasi="semarang" data-tipe="parttime">
+            <div class="jod-info">
+              <h3>Karyawan Outlet</h3>
+              <img src="IMAGES/esteh_indonesia.png" alt="Es Teh Indonesia" />
+              <p>PT Esteh Indonesia Makmur</p>
+              <p>Melayani pelanggan dan menjaga kebersihan outlet.</p>
+              <p><strong>Lokasi:</strong> Semarang</p>
+              <p><strong>Jam Kerja:</strong> Part-time</p>
+              <a href="job_estehindo_karyawan.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
 
 
-</head>
-<body>
-<div class="main-container">
-  <div class="sidebar">
-    <div class="logo">Loka<span>Job</span></div>
-    <ul class="menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="Company.html" >Company</a></li>
-      <li><a href="Jobsite.html" class="active">Job</a></li>
-      <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
-      <li><a href="profil.html">Profil</a></li>
-      <li><a href="about.html">About Us</a></li>
-    </ul>
-  </div>
+          <div class="jod-card" data-kategori="teknologi" data-lokasi="jakarta" data-tipe="remote">
+            <div class="jod-info">
+              <h3>IT Support</h3>
+              <img src="IMAGES/Mayora.png" alt="Mayora" />
+              <p>PT Mayora Indah Tbk</p>
+              <p>Menangani masalah teknis perangkat keras dan lunak.</p>
+              <p><strong>Lokasi:</strong> Jakarta</p>
+              <p><strong>Jam Kerja:</strong> Remote</p>
+              <a href="job_mayora_IT-support.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
 
-  <div class="main-content">
-    <header class="header">
-      <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
-      <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
-      <div class="user-area">
-        <span class="username">Username</span>
-        <span class="notif-bell">🔔</span>
+          <div class="jod-card" data-kategori="koki" data-lokasi="yogyakarta" data-tipe="parttime">
+            <div class="jod-info">
+              <h3>Koki</h3>
+              <img src="IMAGES/Tahu Gila.jpg" alt="Tahu Gila" />
+              <p>UMKM Tahu Gila</p>
+              <p>Memasak menu andalan tahu gila dan menjaga kualitas rasa makanan.</p>
+              <p><strong>Lokasi:</strong> Yogyakarta</p>
+              <p><strong>Jam Kerja:</strong> Part-time</p>
+              <a href="job_tahugila_koki.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="marketing" data-lokasi="surabaya" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Marketing Specialist</h3>
+              <img src="IMAGES/PT Santos Jaya Abadi.jpg" alt="Kapal Api Group" />
+              <p>PT Kapal Api Global</p>
+              <p>Mengembangkan strategi pemasaran dan analisis pasar kopi lokal dan internasional.</p>
+              <p><strong>Lokasi:</strong> Surabaya</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_kapalapi_marketing.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+
+          <div class="jod-card" data-kategori="teknisi" data-lokasi="yogyakarta" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Teknisi Mesin</h3>
+              <img src="IMAGES/Sari Rotijpg.jpg" alt="Sari Roti" />
+              <p>PT Nippon Indosari Corpindo Tbk</p>
+              <p>Merawat dan memperbaiki peralatan produksi pabrik.</p>
+              <p><strong>Lokasi:</strong> Yogyakarta</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_sariroti_teknisi.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="admin" data-lokasi="semarang" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Administrasi Perkantoran</h3>
+              <img src="IMAGES/admin.jpg" alt="Logo Administrasi" />
+              <p>PT Cipta Abadi Sejahtera</p>
+              <p>Mengelola data, menyusun laporan, dan mendukung operasional kantor harian.</p>
+              <p><strong>Lokasi:</strong> Semarang, Jawa Tengah</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_admin.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="medis" data-lokasi="yogyakarta" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Dokter Gigi</h3>
+              <img src="IMAGES/dokter-gigi.jpg" alt="Logo Klinik Gigi" />
+              <p>Klinik Senyum Ceria</p>
+              <p>Melayani pasien gigi dan memberikan perawatan medis di klinik atau rumah sakit.</p>
+              <p><strong>Lokasi:</strong> Yogyakarta, DI Yogyakarta</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_dokter-gigi.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="desain" data-lokasi="jakarta" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Graphic Designer</h3>
+              <img src="IMAGES/graphic-designer.jpg" alt="Logo Desain" />
+              <p>CV Kreasi Visual Mandiri</p>
+              <p>Mendesain materi visual untuk kampanye digital dan cetak perusahaan.</p>
+              <p><strong>Lokasi:</strong> Jakarta Selatan, DKI Jakarta</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_graphic-designer.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="pendidikan" data-lokasi="kendal" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Guru SD</h3>
+              <img src="IMAGES/guru.jpg" alt="Logo Sekolah" />
+              <p>SD Islam Terpadu Al-Madina</p>
+              <p>Mengajar siswa sekolah dasar dan menyusun rencana pembelajaran harian.</p>
+              <p><strong>Lokasi:</strong> Kendal, Jawa Tengah</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_guru.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="it" data-lokasi="bandung" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>IT Support</h3>
+              <img src="IMAGES/IT-support.jpg" alt="Logo IT" />
+              <p>PT Teknologi Nusantara</p>
+              <p>Menangani masalah teknis perangkat dan jaringan, serta mendukung operasional IT.</p>
+              <p><strong>Lokasi:</strong> Bandung, Jawa Barat</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_IT-support.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="kuliner" data-lokasi="surabaya" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Koki</h3>
+              <img src="IMAGES/koki.jpg" alt="Logo Restoran" />
+              <p>Restoran Rasa Nusantara</p>
+              <p>Menyiapkan dan memasak makanan sesuai standar restoran atau hotel.</p>
+              <p><strong>Lokasi:</strong> Surabaya, Jawa Timur</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_koki.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="marketing" data-lokasi="jakarta" data-tipe="internship">
+            <div class="jod-info">
+              <h3>Digital Marketing</h3>
+              <img src="IMAGES/marketing.jpg" alt="Logo Marketing" />
+              <p>PT Promosi Digital Indonesia</p>
+              <p>Meningkatkan visibilitas online perusahaan melalui strategi digital.</p>
+              <p><strong>Lokasi:</strong> Jakarta Barat, DKI Jakarta</p>
+              <p><strong>Jam Kerja:</strong> Internship</p>
+              <a href="job_marketing.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+
+          <div class="jod-card" data-kategori="teknik" data-lokasi="karawang" data-tipe="fulltime">
+            <div class="jod-info">
+              <h3>Teknisi Mesin</h3>
+              <img src="IMAGES/teknisi.jpg" alt="Logo Industri" />
+              <p>PT Karawang Mekanika</p>
+              <p>Memelihara dan memperbaiki mesin produksi di pabrik atau industri.</p>
+              <p><strong>Lokasi:</strong> Karawang, Jawa Barat</p>
+              <p><strong>Jam Kerja:</strong> Full-time</p>
+              <a href="job_teknisi.html" class="btn-detail">Lihat Detail</a>
+            </div>
+          </div>
+        </section>
       </div>
-    </header>
 
-    <div class="content-wrapper">
-      <div class="job-header">
-        <h2>Job</h2>
-        <p>Cari peluang terbaik untuk kariermu</p>
-      </div>
-
-      <section class="job-filter">
-        <select id="kategoriFilter">
-          <option value="all">Semua Kategori</option>
-          <option value="Dokter Gigi">Dokter Gigi</option>
-          <option value="Finance & Accounting">Finance & Accounting</option>
-          <option value="Business Dev & Sales">Business Dev & Sales</option>
-        </select>
-
-        <select id="lokasiFilter">
-          <option value="all">Semua Lokasi</option>
-          <option value="jakarta">Jakarta</option>
-          <option value="bandung">Bandung</option>
-          <option value="semarang">Semarang</option>
-        </select>
-
-        <select id="tipeFilter">
-          <option value="all">Semua Lokasi</option>
-          <option value="Full-time">Full-time</option>
-          <option value="Part-time">Part-time</option>
-          <option value="Internship">Internship</option>
-        </select>
-      </section>
-      <br>
-<section class="jobs-list fade-in">
-  <div class="job-card" data-kategori="Dokter Gigi" data-lokasi="semarang" data-tipe="Full-time">
-    <div class="job-info">
-      <h3>Dokter Gigi</h3>
-      <p class="company">
-        <img src="IMAGES/dokter-gigi.jpg" alt="Dokter Gigi" class="logo-inline">
-        Klinik Gigi Sehat
-      </p>
-      <p class="location">Semarang, Jawa Tengah</p>
-    </div>
-    <div class="job-meta">
-      <span class="type">Full-time</span>
-      <a href="job_dokter-gigi.html" class="apply-btn">Lamar</a>
-    </div>
-  </div>
-
-  <div class="job-card" data-kategori="IT & Engineering" data-lokasi="jakarta" data-tipe="Part-time">
-    <div class="job-info">
-      <h3>Backend Engineer</h3>
-      <p class="company">
-        <img src="IMAGES/bacend.png" alt="CV Solusi Teknologi" class="logo-inline">
-        CV. Solusi Teknologi
-      </p>
-      <p class="location">Jakarta</p>
-    </div>
-    <div class="job-meta">
-      <span class="type">Part-time</span>
-      <a href="job-detail-backend.html" class="apply-btn">Lamar</a>
-    </div>
-  </div>
-
-  <div class="job-card" data-kategori="Finance & Accounting" data-lokasi="surabaya" data-tipe="Internship">
-    <div class="job-info">
-      <h3>Akuntan Junior</h3>
-      <p class="company">
-        <img src="IMAGES/finasia.png" alt="PT Finansia Bersama" class="logo-inline">
-        PT. Finansia Bersama
-      </p>
-      <p class="location">Surabaya</p>
-    </div>
-    <div class="job-meta">
-      <span class="type">Internship</span>
-      <a href="job-detail-akuntan.html" class="apply-btn">Lamar</a>
-    </div>
-  </div>
-</section>
-
-
-  </div>
       <footer class="footer">
-      <p>&copy; 2025 LokaJob. All rights reserved.</p>
-    </footer>
-</div>
+        <p>&copy; 2025 LokaJob. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
 
-<script>
-  // Toggle sidebar
-  function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('active');
-  }
-
-  // === FILTER ===
-  const kategoriFilter = document.getElementById("kategoriFilter");
-  const lokasiFilter = document.getElementById("lokasiFilter");
-  const tipeFilter = document.getElementById("tipeFilter");
-  const jobCards = document.querySelectorAll(".job-card");
-
-function applyJobFilters() {
-  const selectedKategori = kategoriFilter.value;
-  const selectedLokasi = lokasiFilter.value;
-  const selectedTipe = tipeFilter.value;
-
-  jobCards.forEach(card => {
-    const cardKategori = card.getAttribute("data-kategori");
-    const cardLokasi = card.getAttribute("data-lokasi");
-    const cardTipe = card.getAttribute("data-tipe");
-
-    const matchKategori = selectedKategori === "all" || cardKategori === selectedKategori;
-    const matchLokasi = selectedLokasi === "all" || cardLokasi === selectedLokasi;
-    const matchTipe = selectedTipe === "all" || cardTipe === selectedTipe;
-
-    if (matchKategori && matchLokasi && matchTipe) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('active');
     }
-  });
-}
 
-kategoriFilter.addEventListener("change", applyJobFilters);
-lokasiFilter.addEventListener("change", applyJobFilters);
-tipeFilter.addEventListener("change", applyJobFilters);
+    const kategoriFilter = document.getElementById("kategoriFilter");
+    const lokasiFilter = document.getElementById("lokasiFilter");
+    const tipeFilter = document.getElementById("tipeFilter");
+    const jodCards = document.querySelectorAll(".jod-card");
 
-</script>
+    function applyJodFilters() {
+      const selectedKategori = kategoriFilter.value;
+      const selectedLokasi = lokasiFilter.value;
+      const selectedTipe = tipeFilter.value;
+
+      jodCards.forEach(card => {
+        const cardKategori = card.getAttribute("data-kategori");
+        const cardLokasi = card.getAttribute("data-lokasi");
+        const cardTipe = card.getAttribute("data-tipe");
+
+        const matchKategori = selectedKategori === "all" || cardKategori === selectedKategori;
+        const matchLokasi = selectedLokasi === "all" || cardLokasi === selectedLokasi;
+        const matchTipe = selectedTipe === "all" || cardTipe === selectedTipe;
+
+        card.style.display = (matchKategori && matchLokasi && matchTipe) ? "block" : "none";
+      });
+    }
+
+    kategoriFilter.addEventListener("change", applyJodFilters);
+    lokasiFilter.addEventListener("change", applyJodFilters);
+    tipeFilter.addEventListener("change", applyJodFilters);
+  </script>
 </body>
 </html>
