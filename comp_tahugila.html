@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Perusahaan - Tahu Gila</title>
+  <link rel="stylesheet" href="CSS/Style_Company-detail.css">
+</head>
+<body>
+<div class="main-container">
+  <div class="sidebar">
+    <div class="logo">Loka<span>Job</span></div>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Company.html" class="active">Company</a></li>
+      <li><a href="Jobsite.html">Job</a></li>
+      <li><a href="Tips_&_Trick.html">Tips & Trick</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <header class="header">
+      <div class="logo" onclick="toggleSidebar()">Loka<span>Job</span></div>
+      <input type="text" placeholder="Cari Pekerjaan di sini..." class="search-bar" />
+      <div class="user-area">
+        <span class="username">Username</span>
+        <span class="notif-bell">🔔</span>
+      </div>
+    </header>
+
+    <div class="content-wrapper">
+      <div class="company-header">
+        <h2>Company</h2>
+        <p>Temukan Company terbaik yang membuka lowongan kerja</p>
+      </div>
+
+      <div class="company-card">
+        <img src="IMAGES/Tahu Gila.jpg" alt="Logo Tahu Gila" class="company-logo" />
+        <div class="company-info">
+          <h3>Tahu Gila</h3>
+          <p>
+            Tahu Gila adalah perusahaan kuliner lokal yang menghadirkan inovasi pada produk tahu goreng dengan berbagai varian rasa modern. Dengan konsep yang kreatif dan target pasar generasi muda, Tahu Gila berkembang pesat sebagai brand UMKM yang menjanjikan di Indonesia.
+          </p>
+          <ul class="company-details">
+            <li>📍 Lokasi: Semarang, Jawa Tengah</li>
+            <li>🏛️ Tahun Berdiri: 2019</li>
+            <li>👥 Jumlah Karyawan: 50+</li>
+            <li>🧺 Industri: Kuliner & UMKM</li>
+            <li>🌐 Website: <a href="https://www.tahugila.id" target="_blank">www.tahugila.id</a></li>
+          </ul>
+
+          <div class="job-list">
+            <h4>Lowongan yang Tersedia</h4>
+            <ul>
+              <li>• Crew Outlet</li>
+              <li>• Social Media Specialist</li>
+              <li>• Franchise Officer</li>
+              <li>• Staff Produksi</li>
+            </ul>
+          </div>
+          <a class="back" href="#" onclick="
+            if (document.referrer) {
+              window.history.back(); 
+            } else {
+              window.location.href='index.html';
+            }">
+            &larr; Kembali ke halaman sebelumnya
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 LokaJob. All rights reserved.</p>
+    </footer>
+  </div>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+  }
+</script>
+</body>
+</html>
